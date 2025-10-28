@@ -7,8 +7,8 @@
         {
             "type": "msedge",
             "request": "launch",
-            "name": "Open Home-Page.html",
-            "file": "c:\\Users\\KA45J\\Documents\\Year 2\\CS2TP - Team Project\\GoodFit Website\\Home-Page.html"
+            "name": "Open home.html",
+            "file": "home.html"
         }
     ]
 }

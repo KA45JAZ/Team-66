@@ -48,6 +48,6 @@ body {
 }
 
 #navbar a.active {
-    color: rgb(81, 112, 255);
+    color: #5170ff;
     font-weight: 700;
 }
