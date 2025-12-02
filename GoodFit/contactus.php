@@ -11,7 +11,7 @@ if (!is_dir($dataDir)) {
     @mkdir($dataDir, 0755, true);
 }
 
-// Helper: prevent basic header injection in email fields
+// no basic header 
 function hasHeaderInjection($str) {
     return preg_match("/[\r\n]/", $str);
 }
@@ -20,12 +20,12 @@ $errors = [];
 $sent = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Retrieve + basic sanitise
+    // Customers info 
     $name = isset($_POST['name']) ? trim($_POST['name']) : '';
     $email = isset($_POST['email']) ? trim($_POST['email']) : '';
     $message = isset($_POST['message']) ? trim($_POST['message']) : '';
 
-    // Validation
+    // Only for validating 
     if ($name === '') $errors[] = 'Name is required.';
     if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Valid email is required.';
     if ($message === '') $errors[] = 'Message cannot be empty.';
@@ -59,14 +59,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Set sent flag if either email or file save succeeded
         if ($mailSuccess || $fileSuccess) {
-            // Use PRG to avoid duplicate submit on refresh
+            
             header('Location: contactus.php?sent=1');
             exit;
         } else {
             $errors[] = 'Failed to submit message (server issue).';
         }
     }
-}
+} // In case of an error 
 
 // Check if redirect indicated success
 if (isset($_GET['sent']) && $_GET['sent'] == '1') {
