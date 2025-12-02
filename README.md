@@ -4,6 +4,7 @@ This project is a e-commerce website named GoodFit. GoodFit sells clothes of the
 
 **Contributors:**
 - Jaspinder Shergill - 240336662
+- one more test
 - Nakib Ahsan - 240186207
 - Yeasin Bhuiyan - 240219620
 - Jasandeep Gill - 240188175
