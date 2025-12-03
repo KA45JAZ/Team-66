@@ -92,5 +92,78 @@ body {
 }
 
 .nav-text h1{
-    font-size: 10px;
+    font-size: 14px;
+}
+
+.cart{
+    display: flex;
+    align-items: center;
+    margin: 0px 15px;
+}
+
+.nav-bottom{
+display: flex;
+align-items: center;
+gap: 20px;
+padding: 8px 20px;
+background: #232;
+color: #fff;
+font-size: 15px;
+}
+
+.nav-bottom div{
+display: flex;
+align-items: center;
+gap: 5px;
+font-weight: 500;
+}
+
+.scroll-bar{
+    display:flex;
+    overflow-y:hidden ;
+}
+
+/* Add styles for image here after*/
+
+.scroll-bar a{
+    position: absolute;
+    top: 20%;
+    z-index: 1;
+    padding: 5vh 1vw;
+    background: #ffffff4f ;
+    color: #0000007b;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18 px;
+    cursor: pointer;
+
+}
+
+.control_next{
+    right: 0;
+}
+
+.box-row{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    justify-content: space-between;
+    margin: 20px 30px;
+}
+
+.bow-col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 30px;
+    background: black;
+    max-width: 24%;
+    min-width: 200px;
+
+}
+
+.box-col a{
+   font-size: 13px; 
+   color: gray;
+   font-weight: 500;
 }
