@@ -1,0 +1,132 @@
+<?php
+// contactus.php framework used here 
+
+// CONF
+$adminEmail = 'support@goodfit.com';
+$dataDir = __DIR__ . '/data';
+$dataFile = $dataDir . '/messages.csv';
+
+// Ensure data directory exists (will attempt to create if not)
+if (!is_dir($dataDir)) {
+    @mkdir($dataDir, 0755, true);
+}
+
+// Helper: prevent basic header injection in email fields
+function hasHeaderInjection($str) {
+    return preg_match("/[\r\n]/", $str);
+}
+
+$errors = [];
+$sent = false;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve + basic sanitise
+    $name = isset($_POST['name']) ? trim($_POST['name']) : '';
+    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $message = isset($_POST['message']) ? trim($_POST['message']) : '';
+
+    // Validation
+    if ($name === '') $errors[] = 'Name is required.';
+    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Valid email is required.';
+    if ($message === '') $errors[] = 'Message cannot be empty.';
+
+    // Header injection check
+    if (hasHeaderInjection($name) || hasHeaderInjection($email)) {
+        $errors[] = 'Invalid input.';
+    }
+
+    if (empty($errors)) {
+        // Prepare email
+        $subject = 'Goodfit Contact Form: ' . substr($name, 0, 50);
+        $body = "Name: $name\nEmail: $email\n\nMessage:\n$message\n";
+        $headers = "From: $email\r\nReply-To: $email\r\n";
+
+        // Attempt to send email (may fail on some servers)
+        $mailSuccess = false;
+        if (function_exists('mail')) {
+            // suppress warnings
+            $mailSuccess = @mail($adminEmail, $subject, $body, $headers);
+        }
+
+        // Save to CSV as fallback + record
+        $fileSuccess = false;
+        $row = [date('Y-m-d H:i:s'), $name, $email, $message, $mailSuccess ? 'email_sent' : 'email_failed'];
+        if ($fp = @fopen($dataFile, 'a')) {
+            fputcsv($fp, $row);
+            fclose($fp);
+            $fileSuccess = true;
+        }
+
+        // Set sent flag if either email or file save succeeded
+        if ($mailSuccess || $fileSuccess) {
+            // Use PRG to avoid duplicate submit on refresh
+            header('Location: contactus.php?sent=1');
+            exit;
+        } else {
+            $errors[] = 'Failed to submit message (server issue).';
+        }
+    }
+}
+
+// Check if redirect indicated success
+if (isset($_GET['sent']) && $_GET['sent'] == '1') {
+    $sent = true;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact Us - Goodfit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<?php include 'navbar.php'; ?>
+
+<div class="container">
+  <h1>Contact Us</h1>
+
+  <p><strong>Opening Hours:</strong><br>
+    Monday – Friday: 10am – 7pm<br>
+    Saturday & Sunday: 11am – 5pm
+  </p>
+
+  <p>
+    If you have any queries, contact us at <strong>0778753649</strong> or email
+    <strong>support@goodfit.com</strong>. We're always here to help.
+  </p>
+
+  <p><strong>Address:</strong><br>
+    Goodfit<br>
+    16 Hazel Road<br>
+    Birmingham<br>
+    B4 7ET
+  </p>
+
+  <h2>Send Us a Message</h2>
+
+  <?php if ($sent): ?>
+    <div class="success">Thank you! Your message has been received. We will reply as soon as possible.</div>
+  <?php endif; ?>
+
+  <?php if (!empty($errors)): ?>
+    <div class="error">
+      <?php foreach ($errors as $e) echo '<p>' . htmlspecialchars($e) . '</p>'; ?>
+    </div>
+  <?php endif; ?>
+
+  <form action="contactus.php" method="POST" class="contact-form" novalidate>
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name" required value="<?php echo isset($name) ? htmlspecialchars($name) : ''; ?>">
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" name="email" required value="<?php echo isset($email) ? htmlspecialchars($email) : ''; ?>">
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required><?php echo isset($message) ? htmlspecialchars($message) : ''; ?></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+</body>
+</html>
