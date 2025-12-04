@@ -1,61 +1,8 @@
-<<<<<<< HEAD
 /* Top bar container */
 .top-nav {
-=======
-.modal-note {
-    text-align: center;
-    color: var(--text-light);
-    font-size: 14px;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    border-left: 4px solid var(--secondary-color);
-}
-
-.demo-form {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.demo-btn {
-    background-color: #ccc;
-    color: #666;
-    border: none;
-    padding: 15px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: not-allowed;
-    transition: var(--transition);
-    margin-top: 10px;
-}
-
-.demo-btn:hover {
-    background-color: #bbb;
-}
-
-.footer-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.footer-btn {
-    flex: 1;
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: 14px;
->>>>>>> 792e821 (Add index.html, style.css, and home.html)
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-<<<<<<< HEAD
     background: #0d0d0d;
     padding: 10px 30px;
 }
@@ -115,6 +62,18 @@
     opacity: 0.7;
 }
 
+/* Make body take the full viewport height and use flex layout */
+.body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* full viewport height */
+    margin: 0; /* remove default margin */
+}
+
+/* Main content should expand to fill available space */
+.content {
+    flex: 1;
+}
 /* FOOTER */
 .footer {
     background: #0d0d0d;
@@ -165,72 +124,85 @@
 
 .footer-links a:hover {
     opacity: 0.7;
-=======
+}
+
+/* Page content container */
+.basket-page {
+    display: flex;
     justify-content: center;
-    gap: 8px;
 }
 
-.footer-btn:hover {
-    background-color: var(--secondary-color);
-    color: white;
-    border-color: var(--secondary-color);
+/* Basket box */
+.basket-box {
+    background: white;
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    max-height: 70vh; /* scrollable if too tall */
+    padding: 20px;
 }
 
-.footer-contact-btn {
-    background-color: var(--secondary-color);
-    color: white;
+.basket-box h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.basket-item {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding:10px 0;
+    border-bottom:1px solid #ccc;
+}
+
+.basket-item:last-child {
+    border-bottom: none;
+}
+
+/* Empty basket placeholder */
+.empty-basket {
+    text-align: center;
+    color: #555;
+}
+
+.empty-basket img {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.select-quantity {
+    margin-right: 10px;
+}
+
+.remove-btn {
+    background: none;
     border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+    color: #ff4d4d;
+    font-size: 18px;
     cursor: pointer;
-    transition: var(--transition);
-    font-size: 14px;
-    display: inline-flex;
+}
+
+.remove-btn:hover {
+    color: #e60000;
+}
+.basket-footer {
+    text-align: right;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.item-left {
+    display:flex;
+    align-items:center;
+    gap:10px; /* space between name and quantity/price */
+}
+
+.quantity-price {
+    display: flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 10px;
+    gap: 10px; /* space between quantity dropdown and price */
 }
 
-.footer-contact-btn:hover {
-    background-color: #e55a2e;
-}
-
-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-input:disabled {
-    background-color: var(--card-bg);
-    color: var(--text-light);
-    cursor: not-allowed;
-}
-
-.product-card:hover .add-to-cart {
-    background-color: #e55a2e;
-}
-
-.product-card:hover .quick-view {
-    background-color: var(--border-color);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.product-card, .hero-content, .about-content {
-    animation: fadeIn 0.6s ease-out;
-}
-
-@media (max-width: 768px) {
-    .footer-actions {
-        flex-direction: column;
-    }
-    
-    .footer-contact-btn {
-        width: 100%;
-        justify-content: center;
-    }
->>>>>>> 792e821 (Add index.html, style.css, and home.html)
-}
