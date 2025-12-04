@@ -1,8 +1,61 @@
+<<<<<<< HEAD
 /* Top bar container */
 .top-nav {
+=======
+.modal-note {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.demo-form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.demo-btn {
+    background-color: #ccc;
+    color: #666;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: not-allowed;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.demo-btn:hover {
+    background-color: #bbb;
+}
+
+.footer-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.footer-btn {
+    flex: 1;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 14px;
+>>>>>>> 792e821 (Add index.html, style.css, and home.html)
+    display: flex;
     align-items: center;
+<<<<<<< HEAD
     background: #0d0d0d;
     padding: 10px 30px;
 }
@@ -112,4 +165,72 @@
 
 .footer-links a:hover {
     opacity: 0.7;
+=======
+    justify-content: center;
+    gap: 8px;
+}
+
+.footer-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.footer-contact-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.footer-contact-btn:hover {
+    background-color: #e55a2e;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+input:disabled {
+    background-color: var(--card-bg);
+    color: var(--text-light);
+    cursor: not-allowed;
+}
+
+.product-card:hover .add-to-cart {
+    background-color: #e55a2e;
+}
+
+.product-card:hover .quick-view {
+    background-color: var(--border-color);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.product-card, .hero-content, .about-content {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@media (max-width: 768px) {
+    .footer-actions {
+        flex-direction: column;
+    }
+    
+    .footer-contact-btn {
+        width: 100%;
+        justify-content: center;
+    }
+>>>>>>> 792e821 (Add index.html, style.css, and home.html)
 }
