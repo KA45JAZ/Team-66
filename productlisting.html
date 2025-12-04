@@ -1,89 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <title>Product Listing</title>
-   
-    <link rel="stylesheet" href="GoodFit/css/style.css"/>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="GoodFit/css/style.css">
 </head>
 
-<body >
-    <header id="main-header">
-    <nav div="navbar">
-        <a href="/">
-            <img src="GoodFit/logo/GoodFit_Logo.png" width="100" alt="">
-        </a>
-        <div class="nav-search">
-           <div class="nav-search-cat">
+<body>
 
-            <input type="text" class="nav-search-input" placeholder="Search">
-            <!--Maybe add image here-->
-           </div>
+    
+    <header id="main-header">
+        <nav id="navbar">
+            <a href="/">
+                <img src="GoodFit/logo/GoodFit_Logo.png" width="100" alt="">
+            </a>
+
+            
+            <div class="nav-search">
+                <div class="nav-search-cat">
+                    <p>All</p>
+                    <img src="assets/dropdown_icon.png" height="12" alt="">
+                </div>
+                <input type="text" class="nav-search-input" placeholder="Search">
+                <img src="assets/search_icon.png" class="nav-search-icon" alt="">
+            </div>
+
+           
+            <div class="nav-text">
+                <p>Hello, Sign in</p>
+                <h1>Account <img src="assets/dropdown_icon.png" width="8px" alt=""></h1>
+            </div>
+
+            <div class="nav-text">
+                <p>Return</p>
+                <h1>& Orders</h1>
+            </div>
+
+            <a href="#" class="cart">
+                <img src="assets/Cart.png" width="35px" alt="">
+                <h4>Cart</h4>
+            </a>
+        </nav>
+    </header>
+
+    
+    <div class="nav-bottom">
+        <div>
+            <img src="assets/menu_icon.png" width="25px" alt="">
+            <p>All</p>
+        </div>
+        <p>Categories</p>
+        <p>Register</p>
+        <p>Customer service</p>
+        <p>Home page</p>
+    </div>
+
+  
+    <div class="scroll-bar">
+        <a href="#" class="control_pre">&#129144;</a>
+        <a href="#" class="control_next">&#129146;</a>
+
+        <ul>
+            <img src="assets/Men_fashion.png" class="header-img" alt="">
+            <img src="assets/Women_fashion.png" class="header-img" alt="">
+            <img src="assets/Kids_fashion.png" class="header-img" alt="">
+            <img src="assets/Accessories.png" class="header-img" alt="">
+        </ul>
+    </div>
+
+  
+    <div class="box-row header-box">
+        <div class="box-col">
+            <h3>Men's fashion</h3>
+            <img src="assets/Men_fashion.png" alt="">
+            <a href="/">Shop More</a>
         </div>
 
-    <div class="nav-text">
-        <p>Hello, Sign in</p>
-        <h1> Account </h1>
-    </div>
-    <div class="nav-text">
-        <p>Return</p>
-        <h1> & Orders </h1>
-    </div>
-    <a href="" class = "cart">
-        <!--Maybe add an image here-->
-        <h4>Cart</h4>
-    </a>
+        <div class="box-col">
+            <h3>Women's fashion</h3>
+            <img src="assets/Women_fashion.png" alt="">
+            <a href="/">Shop More</a>
+        </div>
 
-    </nav>
-</header>
+        <div class="box-col">
+            <h3>Kid's fashion</h3>
+            <img src="assets/Kids_fashion.png" alt="">
+            <a href="/">Shop More</a>
+        </div>
 
-<div class="nav-bottom">
-    <div>
-    <!-- add image here-->
-     <p>
-        All
-     </p>
-     </div>
-     <p>Categories</p>
-     <p>Register</p>
-     <p>Customer service</p>
-     <p>Home page</p>
+        <div class="box-col">
+            <h3>Accessories</h3>
+            <img src="assets/Accessories.png" alt="">
+            <a href="/">Shop More</a>
+        </div>
+    </div>
+
     
-</div>
-
-<div class="scroll-bar">
-    <a href="#" class="control_pre">&129144</a>
-    <a href="#" class="control_next">&#129146</a>
-    <ul>
-        <!--Add images here after done-->
-
-    </ul>
-</div>
-
-<div class="box-row">
-    <div class="box-col">
-        <h3> Return </h3>
-        <!--add image here-->
+    <div class="product-scroll">
+        <h2>Best Selling Products</h2>
+        <div class="products">
+            <img src="assets/product_1.png" alt="">
+            <img src="assets/product_2.png" alt="">
+            <img src="assets/product_3.png" alt="">
+            <img src="assets/product_4.png" alt="">
+        </div>
     </div>
-</div>
-<div class="box-row">
-    <div class="box-col">
-        <h3> Return </h3>
-        <!--add image here-->
-    </div>
-</div>
-<div class="box-row">
-    <div class="box-col">
-        <h3> Return </h3>
-        <!--add image here-->
-    </div>
-</div>
 
-<script src="script.js"></script>
+    
+    <div class="product-scroll-price">
+        <h2>Shop</h2>
+
+        <div class="products">
+
+            <div class="product-card">
+                <div class="product-img-cont">
+                    <img src="assets/hoodie.png" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>25% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">£ <span>15.00</span> Original Price: £20.00</p>
+                <h4>Comfortable hoodie</h4>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-cont">
+                    <img src="assets/Legging.png" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>25% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">£ <span>15.00</span> Original Price: £20.00</p>
+                <h4>Comfortable leggings</h4>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-cont">
+                    <img src="assets/pant.png" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>25% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">£ <span>15.00</span> Original Price: £20.00</p>
+                <h4>Comfortable pants</h4>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-cont">
+                    <img src="assets/short.png" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>25% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">£ <span>15.00</span> Original Price: £20.00</p>
+                <h4>Comfortable shorts</h4>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <footer>
+        <img src="GoodFit/logo/GoodFit_Logo.png" width="100" alt="">
+        <p>Copyright</p>
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
 
