@@ -60,15 +60,15 @@ if (isset($_POST['submitted'])){
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Registration System </title>
-  <link rel="stylesheet" href="style.css">
+  <title>Registration</title>
+  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/x.icon" href="images/GoodFit_favicon.ico">
 </head>
 <body>
     <header>
         <table>
             <tr>
-                <a href="homepage.php">
+                <a href="home.html">
                     <img src="images/GoodFit_Logo.png" alt="GoodFit Logo" width="120" height="120">
                 </a>
             </tr>
