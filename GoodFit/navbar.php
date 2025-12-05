@@ -36,7 +36,7 @@ $is_logged_in = isset($_SESSION['user_id']);
 
   <!-- CATEGORIES: centered under the logo -->
   <nav class="bottom-nav">
-    <a href="men.php">MEN</a>
+    <a href="productlist.php">MEN</a>
     <a href="women.php">WOMEN</a>
     <a href="kids.php">KIDS</a>
     <a href="accessories.php">ACCESSORIES</a>

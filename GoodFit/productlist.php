@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!--<h2 style="text-align:center; margin-top:120px;">
-          This category page is coming soon!
+This category page is coming soon!
     </h2>   -->
 
 <!-- FEATURED PRODUCTS -->
