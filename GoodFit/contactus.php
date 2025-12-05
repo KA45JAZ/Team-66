@@ -1,5 +1,7 @@
+
 <?php
 // contactus.php framework used here  
+
 
 // CONF
 $adminEmail = 'support@goodfit.com';
@@ -65,6 +67,7 @@ if (isset($_GET['sent']) && $_GET['sent'] == '1') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+  <!-- 
 <head>
   <meta charset="utf-8">
   <title>Contact Us - Goodfit</title>
@@ -77,50 +80,63 @@ if (isset($_GET['sent']) && $_GET['sent'] == '1') {
 <div class="contact-container">
   <h1>Contact Us</h1>
 
-  <p><strong>Opening Hours:</strong><br>
-    Monday – Friday: 10am – 7pm<br>
-    Saturday & Sunday: 11am – 5pm
-  </p>
+<div class="container contact-overview"> <!-- Added contact-wrapper class for specific styling -->
+  <h1 class="contact-title">Contact Us</h1>
+    <div class="contactusLayout">
+      <div class="contactusInfo">
+        <p><strong>Opening Hours:</strong><br>
+          Monday – Friday: 10am – 7pm<br>
+          Saturday & Sunday: 11am – 5pm
+        </p>
 
-  <p>
-    If you have any queries, contact us at <strong>0778753649</strong> or email
-    <strong>support@goodfit.com</strong>. We're always here to help.
-  </p>
 
-  <p><strong>Address:</strong><br>
-    Goodfit<br>
-    16 Hazel Road<br>
-    Birmingham<br>
-    B4 7ET
-  </p>
+        <p>
+          If you have any queries, contact us at <strong>0778753649</strong> or email
+          <strong>support@goodfit.com</strong>. We're always here to help.
+        </p>
 
-  <h2>Send Us a Message</h2>
+        <p><strong>Address:</strong><br>
+          Goodfit<br>
+          16 Hazel Road<br>
+          Birmingham<br>
+          B4 7ET
+        </p>
+      </div> <!-- End contactUs page layout-->
+    
 
-  <?php if ($sent): ?>
-    <div class="success">Thank you! Your message has been received. We will reply as soon as possible.</div>
-  <?php endif; ?>
+      <div class ="contactBox"> <!-- Added contact-box class for specific styling -->
+        
+        <h2 class="sendingMessage">Send Us a Message</h2> <!-- Added send-title class for specific styling -->
 
-  <?php if (!empty($errors)): ?>
-    <div class="error">
-      <?php foreach ($errors as $e) echo '<p>' . htmlspecialchars($e) . '</p>'; ?>
+        <?php if ($sent): ?>
+          <div class="success">Thank you! Your message has been received. We will reply as soon as possible.</div>
+        <?php endif; ?>
+
+        <?php if (!empty($errors)): ?>
+          <div class="error">
+            <?php foreach ($errors as $e) echo '<p>' . htmlspecialchars($e) . '</p>'; ?>
+          </div>
+        <?php endif; ?>
+
+        <form action="contactus.php" method="POST" class="contact-form" novalidate>
+          <label for="name">Name:</label>
+          <input id="name" type="text" name="name" required value="<?php echo isset($name) ? htmlspecialchars($name) : ''; ?>">
+
+          <label for="email">Email:</label>
+          <input id="email" type="email" name="email" required value="<?php echo isset($email) ? htmlspecialchars($email) : ''; ?>">
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required><?php echo isset($message) ? htmlspecialchars($message) : ''; ?></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div> <!-- End contactus page Box -->
     </div>
-  <?php endif; ?>
-
-  <form action="contactus.php" method="POST" class="contact-form" novalidate>
-    <label for="name">Name:</label>
-    <input id="name" type="text" name="name" required value="<?php echo isset($name) ? htmlspecialchars($name) : ''; ?>">
-
-    <label for="email">Email:</label>
-    <input id="email" type="email" name="email" required value="<?php echo isset($email) ? htmlspecialchars($email) : ''; ?>">
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="5" required><?php echo isset($message) ? htmlspecialchars($message) : ''; ?></textarea>
-
-    <button type="submit">Send Message</button>
-  </form>
+    
 </div>
 
 <?php include 'footer.php'; ?>
 
+  
 </body>
 </html>
