@@ -1,17 +1,17 @@
 <?php
-// contactus.php framework used here 
+// contactus.php framework used here  
 
 // CONF
 $adminEmail = 'support@goodfit.com';
 $dataDir = __DIR__ . '/data';
 $dataFile = $dataDir . '/messages.csv';
 
-// Ensure data directory exists (will attempt to create if not)
+// Ensure data directory exists
 if (!is_dir($dataDir)) {
     @mkdir($dataDir, 0755, true);
 }
 
-// Helper: prevent basic header injection in email fields
+// Helper: prevent basic header injection
 function hasHeaderInjection($str) {
     return preg_match("/[\r\n]/", $str);
 }
@@ -20,35 +20,28 @@ $errors = [];
 $sent = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Retrieve + basic sanitise
     $name = isset($_POST['name']) ? trim($_POST['name']) : '';
     $email = isset($_POST['email']) ? trim($_POST['email']) : '';
     $message = isset($_POST['message']) ? trim($_POST['message']) : '';
 
-    // Validation
     if ($name === '') $errors[] = 'Name is required.';
     if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Valid email is required.';
     if ($message === '') $errors[] = 'Message cannot be empty.';
 
-    // Header injection check
     if (hasHeaderInjection($name) || hasHeaderInjection($email)) {
         $errors[] = 'Invalid input.';
     }
 
     if (empty($errors)) {
-        // Prepare email
         $subject = 'Goodfit Contact Form: ' . substr($name, 0, 50);
         $body = "Name: $name\nEmail: $email\n\nMessage:\n$message\n";
         $headers = "From: $email\r\nReply-To: $email\r\n";
 
-        // Attempt to send email (may fail on some servers)
         $mailSuccess = false;
         if (function_exists('mail')) {
-            // suppress warnings
             $mailSuccess = @mail($adminEmail, $subject, $body, $headers);
         }
 
-        // Save to CSV as fallback + record
         $fileSuccess = false;
         $row = [date('Y-m-d H:i:s'), $name, $email, $message, $mailSuccess ? 'email_sent' : 'email_failed'];
         if ($fp = @fopen($dataFile, 'a')) {
@@ -57,9 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $fileSuccess = true;
         }
 
-        // Set sent flag if either email or file save succeeded
         if ($mailSuccess || $fileSuccess) {
-            // Use PRG to avoid duplicate submit on refresh
             header('Location: contactus.php?sent=1');
             exit;
         } else {
@@ -68,7 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Check if redirect indicated success
 if (isset($_GET['sent']) && $_GET['sent'] == '1') {
     $sent = true;
 }
@@ -78,12 +68,13 @@ if (isset($_GET['sent']) && $_GET['sent'] == '1') {
 <head>
   <meta charset="utf-8">
   <title>Contact Us - Goodfit</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <?php include 'navbar.php'; ?>
 
-<div class="container">
+<div class="contact-container">
   <h1>Contact Us</h1>
 
   <p><strong>Opening Hours:</strong><br>
@@ -128,5 +119,8 @@ if (isset($_GET['sent']) && $_GET['sent'] == '1') {
     <button type="submit">Send Message</button>
   </form>
 </div>
+
+<?php include 'footer.php'; ?>
+
 </body>
 </html>

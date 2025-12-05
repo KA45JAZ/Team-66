@@ -12,7 +12,7 @@
         <a href="aboutus.php">About Us</a>
         <a href="terms.php">Terms & Conditions</a>
         <a href="faq.php">FAQ</a>
-        <a href="contact.php">Contact Us</a>
+        <a href="contactus.php">Contact Us</a>
     </div>
 
 </footer>
