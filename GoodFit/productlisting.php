@@ -23,10 +23,10 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
-    <!-- ✅ NAVBAR -->
+    
     <?php include "navbar.php"; ?>
 
-    <!-- ✅ CATEGORY BAR -->
+    
     <div class="nav-bottom">
         <div>
             <img src="GoodFit/assets/menu_icon.png" width="25px" alt="">
@@ -39,7 +39,7 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
         <p><a href="trainers.php">Trainers</a></p>
     </div>
 
-    <!-- ✅ HEADER IMAGES -->
+    
     <div class="scroll-bar">
         <a href="#" class="control_pre">&#129144;</a>
         <a href="#" class="control_next">&#129146;</a>
@@ -52,7 +52,7 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
         </ul>
     </div>
 
-    <!-- ✅ PRODUCT LISTING (DYNAMIC) -->
+    
     <div class="product-scroll-price">
         <h2>Shop</h2>
 
@@ -85,7 +85,7 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <!-- ✅ FOOTER -->
+    
     <?php include "footer.php"; ?>
 
     <script src="GoodFit/JavaScipt/script.js"></script>

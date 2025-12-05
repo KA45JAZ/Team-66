@@ -1,6 +1,6 @@
 
 <?php
-// contactus.php framework used here  
+
 
 
 // CONF
@@ -67,7 +67,7 @@ if (isset($_GET['sent']) && $_GET['sent'] == '1') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <!-- 
+  
 <head>
   <meta charset="utf-8">
   <title>Contact Us - Goodfit</title>

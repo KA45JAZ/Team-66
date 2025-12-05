@@ -3,10 +3,10 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-// Basket count (if you are storing basket items in $_SESSION['basket'])
+
 $basket_count = isset($_SESSION['basket']) ? count($_SESSION['basket']) : 0;
 
-// Check login status
+
 $is_logged_in = isset($_SESSION['user_id']);
 ?>
     
@@ -27,14 +27,14 @@ $is_logged_in = isset($_SESSION['user_id']);
     </div>
 
     <div class="nav-right">
-      <!-- wishlist/account/basket -->
+      
       <a href="wishlist.php" class="nav-icon"><img src="images/wishlist.png" class="icon-img" alt="Wishlist"></a>
       <a href="<?php echo $is_logged_in ? 'account.php' : 'login.php'; ?>" class="nav-icon"><img src="images/account.png" class="icon-img" alt="Account"></a>
       <a href="basket.php" class="nav-icon"><img src="images/basket.png" class="icon-img" alt="Basket"><span class="basket-count"><?= $basket_count ?></span></a>
     </div>
   </div>
 
-  <!-- CATEGORIES: centered under the logo -->
+  
   <nav class="bottom-nav">
     <a href="productlist.php">MEN</a>
     <a href="women.php">WOMEN</a>

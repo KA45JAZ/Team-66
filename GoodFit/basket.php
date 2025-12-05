@@ -21,7 +21,7 @@ if(!isset($_SESSION['basket'])) {
 
 $basket = $_SESSION['basket'];
 
-// Handle remove item
+
 if(isset($_POST['remove_id'])){
     $removeId = intval($_POST['remove_id']);
     $newBasket = [];

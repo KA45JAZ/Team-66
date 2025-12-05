@@ -7,7 +7,7 @@
 This category page is coming soon!
     </h2>   -->
 
-<!-- FEATURED PRODUCTS -->
+<!-- featured products -->
     <section class="featured-section">
         <h2 class="section-title">Featured Products</h2>
 

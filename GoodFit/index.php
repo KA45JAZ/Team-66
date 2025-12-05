@@ -26,7 +26,7 @@
     
 
 
-    <!-- HERO SECTION -->
+    <!-- hero section -->
     <header class="hero-section">
         <div class="hero-text">
             <h1>Premium Sportswear</h1>
@@ -39,7 +39,7 @@
         </div>
     </header>
 
-    <!-- FEATURED PRODUCTS -->
+    <!-- featured products -->
     <section class="featured-section">
         <h2 class="section-title">Featured Products</h2>
 
