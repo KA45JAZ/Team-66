@@ -84,9 +84,7 @@ if (isset($_POST['submitted'])){
     <header id="main-header">
         <?php include 'navbar.php'; ?>
     </header>
-    <div class="image">
-        <img src="images/Welcome.png" alt="Welcome To GoodFit!">
-    </div>
+    
     <div class="form">
         <h2>Register</h2>
         <form method = "post" action="register.php">

@@ -1,7 +1,7 @@
 <?php
 require_once "connectdb.php";
 
-$query = $db->prepare("SELECT product_id, name, price, image FROM products WHERE category = 'men'");
+$query = $db->prepare("SELECT * FROM products WHERE category_id = 1");
 $query->execute();
 $products = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -25,7 +25,7 @@ $products = $query->fetchAll(PDO::FETCH_ASSOC);
         <?php else: ?>
             <?php foreach ($products as $p): ?>
                 <div class="product-card">
-                    <img src="images/<?php echo htmlspecialchars($p['image']); ?>" alt="">
+                    <img src="<?php echo htmlspecialchars($p['image_url']); ?>" alt="">
                     <h3><?php echo htmlspecialchars($p['name']); ?></h3>
                     <p class="price">£<?php echo number_format($p['price'], 2); ?></p>
                     <a href="product.php?id=<?php echo $p['product_id']; ?>" class="add-to-cart">View Product</a>

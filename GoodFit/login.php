@@ -46,43 +46,63 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x.icon" href="images/GoodFit_favicon.ico">
+    <!-- Viewport, Fonts, Stylesheet -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Favicon and Title -->
+    <title>GoodFit</title>
+    <link rel="icon" href="favicon/GoodFit_favicon.png" type="image/x-icon">
 </head>
+
 <body>
-    <header>
-        <table>
-            <tr>
-                <a href="home.html">
-                    <img src="images/GoodFit_Logo.png" alt="GoodFit Logo" width="120" height="120">
-                </a>
-            </tr>
-        </table>
+
+    <!-- Header + Navbar Include -->
+    <header id="main-header">
+        <?php include 'navbar.php'; ?>
     </header>
-    <div name="form">
+
+
+<div class="login-container">
+
+    <div class="login-form">
+        <h2>Login</h2>
+
         <form action="login.php" method="post">
 
             <label>Email Address:</label>
-            <input type="text" name="email"/>
+            <input type="text" name="email">
+
             <label>Password:</label>
-            <input type="password" name="password"/>
-            
-            <a href="forgottenPassword.php">Forgot Password?</a>
-            <input type="submit" value="Login" />
-            <input type="hidden" name="submitted" value="TRUE" />
-            <p>
-                No Account? <a href="Register.php">Register Here</a>
-            </p>
+            <input type="password" name="password">
+
+            <a class="forgot-link" href="forgottenPassword.php">Forgot Password?</a>
+
+            <input type="submit" value="Login">
+            <input type="hidden" name="submitted" value="TRUE">
+
+            <p>No Account? <a href="register.php">Register Here</a></p>
         </form>
     </div>
-    <div name="image">
+
+    <div class="login-image">
         <img src="images/Welcome_Back.png" alt="Welcome Back to GoodFit!">
     </div>
-    <p>&nbsp;</p>
-    <footer>
-        
-    </footer>
+
+</div>
+
+<?php include 'footer.php'; ?>
+
 </body>
+</html>
