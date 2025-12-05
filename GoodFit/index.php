@@ -47,21 +47,22 @@
         <div class="product-grid">
 
             <div class="product-card">
-                <img src="/images/featured1.png" alt="Product">
+                <img src="images/featured1.png" alt="Product">
                 <h3>Performance Hoodie</h3>
                 <p class="price">£39.99</p>
                 <a class="add-to-cart">Add to Cart</a>
             </div>
 
             <div class="product-card">
-                <img src="/images/featured2.png" alt="Product">
+                <img src="images/featured2.png" alt="Product">
                 <h3>Training Joggers</h3>
                 <p class="price">£29.99</p>
                 <a class="add-to-cart">Add to Cart</a>
             </div>
 
             <div class="product-card">
-                <img src="/images/featured3.png" alt="Product">
+                <img src="images/featured3.png" alt="Product">
+
                 <h3>Breathable T-Shirt</h3>
                 <p class="price">£19.99</p>
                 <a class="add-to-cart">Add to Cart</a>
@@ -70,6 +71,22 @@
         </div>
     </section>
 
+<!-- Added to cart message appearing -->
+ 
+ <script>
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Item has been added to cart - Happy shopping!');
+        });
+    });
+</script>
+
+
+
  <?php include 'footer.php'; ?>
+
+
 </body>
 </html>

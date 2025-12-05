@@ -10,7 +10,7 @@
 
     <!-- CENTER: Logo -->
     <div class="nav-center">
-        <a href="home.php">
+        <a href="index.php">
             <img src="logo/GoodFit_Logo.png" alt="GoodFit Logo" class="nav-logo">
         </a>
     </div>
@@ -18,8 +18,8 @@
     <!-- RIGHT: Icons -->
     <div class="nav-right">
         <a href="wishlist.php" class="nav-icon">⭐</a>
-        <a href="account.php" class="nav-icon">👤</a>
         <a href="basket.php" class="nav-icon">🛒<span class="basket-count">0</span></a>
+        <a href="account.php" class="nav-icon">👤</a>
     </div>
 
 </div>
