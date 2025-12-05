@@ -765,6 +765,93 @@ welcome-image {
 
 
 
+/*LOG IN PAGE STULING ----------------------------------------------------------------------------------------------------------*/
+
+/* FULL PAGE CENTERING */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #7DB2FF; 
+}
+
+
+.top-banner {
+    width: 100%;
+    background: #000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.logo {
+    height: 90px;
+}
+
+
+.page-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+form {
+    background: #a8c4ff;
+    padding: 20px;
+    width: 300px;
+    border: 2px solid #00356b;
+    border-radius: 10px;
+}
+
+
+.image-box img {
+    width: 300px;
+    border-radius: 10px;
+    border: 2px solid #00356b;
+}
+
+/*REGISTER PAGEEE   STYLING ---------------------------------------------------------------------------------------------------------*/
+
+.everything {
+    width: 400px;
+    background: #a8c4ff;
+    padding: 25px;
+    margin: 30px auto;  
+    text-align: center; 
+    border: 2px solid #00356b;
+    border-radius: 12px;
+}
+
+.everything label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.everything input,
+.everything select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #00356b;
+}
+
+/* CENTERING TEXT */
+.everything p,
+.everything a {
+    text-align: center;
+}
+
+
+
+
+
 
 
 
