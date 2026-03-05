@@ -1,8 +1,6 @@
 
 <?php
 
-
-
 // CONF
 $adminEmail = 'support@goodfit.com';
 $dataDir = __DIR__ . '/data';
@@ -81,8 +79,8 @@ if (isset($_GET['sent']) && $_GET['sent'] == '1') {
   <h1>Contact Us</h1>
 
 <div class="container contact-overview"> <!-- Added contact-wrapper class for specific styling -->
-  <h1 class="contact-title">Contact Us</h1>
-    <div class="contactusLayout">
+  
+    
       <div class="contactusInfo">
         <p><strong>Opening Hours:</strong><br>
           Monday – Friday: 10am – 7pm<br>
