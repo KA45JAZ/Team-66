@@ -18,7 +18,7 @@ if (!$category) {
     die("<div class='error-page'>Category not found.</div>");
 }
 
-// Fetch products in this category
+// Fetch products in this category , change product_name to name
 $prod_stmt = $db->prepare("SELECT * FROM products WHERE category_id = :id ORDER BY product_id DESC");
 $prod_stmt->execute(['id' => $cat_id]);
 $products = $prod_stmt->fetchAll();
@@ -34,9 +34,9 @@ $products = $prod_stmt->fetchAll();
         <div class="product-grid">
             <?php foreach ($products as $p): ?>
                 <div class="product-card">
-                    <img src="<?= $p['image_url'] ?>" alt="<?= $p['product_name'] ?>">
+                    <img src="<?= $p['image_url'] ?>" alt="<?= $p['name'] ?>"> 
 
-                    <h3><?= $p['product_name'] ?></h3>
+                    <h3><?= $p['name'] ?></h3> 
 
                     <p class="price">£<?= number_format($p['price'], 2) ?></p>
 
