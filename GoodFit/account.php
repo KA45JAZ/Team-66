@@ -10,13 +10,13 @@ if (!isset($_SESSION['user_id'])) {
 // Connect to database
 require_once "connectdb.php";
 
-// Fetch user info
+
 $user_id = $_SESSION['user_id'];
 $query = $db->prepare("SELECT first_name, last_name, email FROM users WHERE user_id = ?");
 $query->execute([$user_id]);
 $user = $query->fetch(PDO::FETCH_ASSOC);
 
-// Safety fallback – if user not found
+
 if (!$user) {
     session_destroy();
     header("Location: login.php");
@@ -31,7 +31,7 @@ if (!$user) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Account</title>
 
-    <!-- External Stylesheet -->
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 

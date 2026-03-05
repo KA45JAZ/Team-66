@@ -22,12 +22,11 @@
 <body>
 
     <!-- Header + Navbar Include -->
-    <header id="main-header">
-        <?php include 'navbar.php'; ?>
-    </header>
+    <?php include 'navbar.php'; ?>
+    
 
 
-    <!-- HERO SECTION -->
+    <!-- hero section -->
     <header class="hero-section">
         <div class="hero-text">
             <h1>Premium Sportswear</h1>
@@ -40,7 +39,7 @@
         </div>
     </header>
 
-    <!-- FEATURED PRODUCTS -->
+    <!-- featured products -->
     <section class="featured-section">
         <h2 class="section-title">Featured Products</h2>
 
@@ -70,6 +69,22 @@
         </div>
     </section>
 
-<?php include 'footer.php'; ?>
+<!-- Added to cart message appearing -->
+ 
+ <script>
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Item has been added to cart - Happy shopping!');
+        });
+    });
+</script>
+
+
+
+ <?php include 'footer.php'; ?>
+
+
 </body>
 </html>

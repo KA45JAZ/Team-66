@@ -1,6 +1,20 @@
-/* ============================
-   GLOBAL PAGE
-============================ */
+/* SFOOTER AND HEADER/NAVBAR LOCATIONS */
+html, body {
+    height: 100%;       /* HEIGHT IS ADJUSTED TO DEVICE */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;   /* FOTTER IS ALWAYS AT THE BOTTOM */
+}
+
+
+
+
+
+/* Make body take the full viewport height and use flex layout */
 body {
     display: flex;
     flex-direction: column;
@@ -16,9 +30,9 @@ body {
     flex: 1;
 }
 
-/* ============================
-   TOP NAVBAR
-============================ */
+/* 
+   top navbar
+ */
 .site-header {
     display: flex;
     flex-direction: column;
@@ -38,7 +52,7 @@ body {
     align-items: center;
     justify-content: space-between; /* left and right stay at edges of container */
 }
-/* LEFT - SEARCH BAR */
+/* left  search bar */
 .nav-left form {
     display: flex;
     align-items: center;
@@ -73,7 +87,7 @@ body {
     opacity: 0.7;
 }
 
-/* CENTER - LOGO */
+/* center logo */
 .nav-center {
     position: absolute;
     left: 50%;
@@ -105,7 +119,7 @@ body {
     opacity: 0.7;
 }
 
-/* RIGHT - ICONS */
+/* right icons */
 .nav-left, .nav-right {
     display: flex;
     align-items: center;
@@ -134,9 +148,9 @@ body {
     font-weight: bold;
 }
 
-/* ============================
-   BOTTOM NAV (CATEGORY LINKS)
-============================ */
+/* 
+   bottom nav categories
+ */
 .bottom-nav {
     display: flex;
     justify-content: center;
@@ -160,9 +174,9 @@ body {
     opacity: 0.55;
 }
 
-/* ============================
-   HERO SECTION
-============================ */
+/* 
+   hero section
+*/
 .hero-section {
     display: flex;
     justify-content: space-between;
@@ -203,9 +217,9 @@ body {
     border-radius: 15px;
 }
 
-/* ============================
-   FEATURED PRODUCT SECTION
-============================ */
+/* 
+   featured products
+*/
 .featured-section {
     padding: 60px 10%;
     text-align: center;
@@ -218,7 +232,7 @@ body {
     font-weight: 700;
 }
 
-/* Product Grid */
+/* product grid */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -273,9 +287,9 @@ body {
     background: #1f3aff;
 }
 
-/* ============================
+/* 
    FOOTER
-============================ */
+ */
 .footer {
     background: #0d0d0d;
     padding: 20px 0;
@@ -315,7 +329,7 @@ body {
     opacity: 0.7;
 }
 
-/* ABOUT US PAGE STYLING*/
+/* about us */
 
 .about-container {
     max-width: 900px;
@@ -363,109 +377,152 @@ body {
     margin: 30px 0;
 }
 
-/* ============================
-   CONTACT PAGE STYLING
-============================ */
+/* 
+   contact page
+ */
 
 .contact-container {
-    max-width: 900px;
-    margin: 60px auto;
+    max-width: 1100px;
+    margin: 50px auto;
     padding: 40px;
-    background: #111;
-    color: white;
+    background: #0d0d0d;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    line-height: 1.7;
 }
 
-.contact-container h1 {
-    font-size: 42px;
-    text-align: center;
-    margin-bottom: 25px;
-    font-family: 'Lato', sans-serif;
+.contact-title {
     color: #3b5cff;
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 35px;
+    font-family: 'Pacifico', cursive;
 }
 
-.contact-container h2 {
-    font-size: 30px;
-    margin-top: 40px;
+/* Layout: Info on left, Form on right */
+.contactusLayout {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* left side info box */
+.contactusInfo {
+    flex: 1;
+    min-width: 300px;
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.contactusInfo strong {
+    color: #6f85ff;
+    font-size: 19px;
+}
+
+/* right side form box */
+.contactBox {
+    flex: 1;
+    min-width: 350px;
+    background: #111;
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid #3b5cff;
+}
+
+.sendingMessage {
+    font-size: 26px;
+    margin-bottom: 15px;
     color: #6f85ff;
     border-left: 4px solid #3b5cff;
     padding-left: 12px;
 }
 
-.contact-container p {
-    font-size: 18px;
-    margin: 12px 0 20px;
-    color: #ddd;
+/* SUCCESS + ERROR */
+.success,
+.error {
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 15px;
 }
 
-/* Success + Error messages */
 .success {
     background: #1f7a1f;
-    padding: 15px;
-    border-radius: 8px;
-    color: white;
-    margin-bottom: 20px;
 }
 
 .error {
     background: #7a1f1f;
-    padding: 15px;
-    border-radius: 8px;
-    color: white;
-    margin-bottom: 20px;
 }
 
-/* Contact Form */
+/* form fields */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 20px;
 }
 
 .contact-form label {
+    color: #9bb0ff;
     font-size: 18px;
     font-weight: bold;
-    color: #9bb0ff;
 }
 
 .contact-form input,
 .contact-form textarea {
     padding: 12px;
     background: #222;
-    border: 2px solid #3b5cff;
-    border-radius: 8px;
     color: white;
+    border-radius: 8px;
+    border: 2px solid #3b5cff;
     font-size: 16px;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    outline: none;
     border-color: #6f85ff;
+    outline: none;
 }
 
 .contact-form button {
     background: #3b5cff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
+    padding: 12px;
     border-radius: 50px;
     font-size: 18px;
+    border: none;
     cursor: pointer;
     transition: 0.3s ease;
     margin-top: 10px;
+    color: white;
 }
 
 .contact-form button:hover {
     background: #1f3aff;
 }
 
-/* ============================
-   PRODUCT LISTING PAGE
-============================ */
+/* mobile */
+@media (max-width: 768px) {
+    .contactusLayout {
+        flex-direction: column;
+    }
+
+    .contactBox {
+        margin-top: 20px;
+    }
+
+    .contact-title {
+        font-size: 35px;
+    }
+
+    .sendingMessage {
+        font-size: 22px;
+    }
+}
+
+
+/*
+   product lising
+ */
 
 .product-listing-container {
     padding: 60px 10%;
@@ -477,9 +534,9 @@ body {
     margin-bottom: 40px;
 }
 
-/* ============================
-   BASKET PAGE
-============================ */
+/* 
+   basket page
+ */
 .basket-page {
     display: flex;
     justify-content: center;
@@ -561,9 +618,9 @@ body {
     gap: 10px;
 }
 
-/* ============================
+/* 
    REGISTER PAGE STYLING
-============================ */
+ */
 
 .image img {
     width: 100%;
@@ -673,9 +730,9 @@ body {
     text-align: center;
 }
 
-/* ============================
-   LOGIN PAGE STYLING
-============================ */
+/* 
+   login page
+ */
 
 .login-container {
     display: flex;
@@ -790,9 +847,9 @@ body {
     text-align: center;
 }
 
-/* ============================
-   ACCOUNT PAGE
-============================ */
+/* 
+   account page
+*/
 .account-container {
     max-width: 400px;
     margin: 40px auto;
@@ -813,4 +870,151 @@ body {
 .btn:hover {
     background: #1f3aff;
 }
+
+
+
+
+/* Contact Us Page Specific Styles */
+.contact-overview {
+    width: 80%;
+    margin: 140px auto;
+    background: #cfe3ff;
+    padding: 30px;
+    border-radius: 10px;
+}       
+
+/*tittle syling*/
+.contact-title, .sendingMessage{
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: underline ;
+    margin-bottom: 20px;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
+.contactusLayout {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Left Information Box */
+.contactusInfo{
+    width: 45%;
+    border: 2px solid #8da9e6;
+    background: #D6E7FF;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Right Form Box */
+.contactBoxL {
+    width: 45%;
+    border: 2px solid #8da9e6;
+    background: #517cb8;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #555;
+}
+
+/* Submit button */
+.contact-form button {
+    width: 100%;
+    background: #A6C8FF;
+    border: 2px solid #6F94D5;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+/* Success + Error Messages */
+.success {
+    background: #b6ffb6;
+    border: 1px solid #5bb45b;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+.error p {
+    background: #ffb7b7;
+    border: 1px solid #c25d5d;
+    padding: 8px;
+    border-radius: 6px;
+    margin: 0 0 5px 0;
+}
+
+
+
+/* FOOOTERR --------------------------------------------------------------   */
+/* ===================== FOOTER ===================== */
+.site-footer {
+    width: 100%;
+    background: #0D0D0D;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 130px;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 15px 0;
+    border-top: 2px solid #444;
+    border-bottom: 2px solid #444;
+}
+
+.footer-links a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: #3366FF;
+    letter-spacing: 1px;
+    transition: 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: hsl(239, 88%, 47%);
+}
+.footer-line {
+    border: none;
+    border-top: 1px solid white;
+    width: 100%;
+    margin: 20px 0 10px;
+}
+
+/* ALL WEBPAGES BACKGROUNF COLOR */
+body {
+    background: #79adfc;
+}
+.contact-wrapper {
+    background: hwb(215 65% 0%);
+    border: none;
+}
+
+
+
+
+
+
+
+
+
 
