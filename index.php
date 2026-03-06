@@ -25,8 +25,8 @@ $featured = $prod_stmt->fetchAll();
     <div class="product-grid">
         <?php foreach ($featured as $p): ?>
             <div class="product-card">
-                <img src="<?= $p['image_url'] ?>" alt="<?= $p['product_name'] ?>">
-                <h3><?= $p['product_name'] ?></h3>
+                <img src="<?= $p['image_url'] ?>" alt="<?= $p['name'] ?>">
+                <h3><?= $p['name'] ?></h3>
                 <p class="price">£<?= number_format($p['price'], 2) ?></p>
                 <a href="product.php?id=<?= $p['product_id'] ?>" class="product-btn">View</a>
             </div>
