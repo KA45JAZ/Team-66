@@ -14,9 +14,9 @@ $products = $stmt->fetchAll();
     <div class="product-grid">
         <?php foreach ($products as $p): ?>
             <div class="product-card">
-                <img src="<?= $p['image_url'] ?>" alt="<?= $p['product_name'] ?>">
+                <img src="<?= $p['image_url'] ?>" alt="<?= $p['name'] ?>">
 
-                <h3><?= $p['product_name'] ?></h3>
+                <h3><?= $p['name'] ?></h3>
 
                 <p class="price">£<?= number_format($p['price'], 2) ?></p>
 

@@ -4,7 +4,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    background: #0d0d0d;
+    background:#0d0d0d;
     color: white;
     font-family: Arial, sans-serif;
 }
@@ -360,8 +360,10 @@ body {
 /* Featured Products */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    /*repeat(auto-fit, minmax(220px, 1fr));*/
     gap: 25px;
+    width: 100%;
 }
 
 .product-card {
@@ -731,6 +733,7 @@ body {
     max-width: 1200px;
     margin: 60px auto;
     padding: 20px;
+    width: 100%;
     font-family: 'Barlow Condensed', sans-serif;
     color: white;
 }
