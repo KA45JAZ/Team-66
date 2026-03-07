@@ -341,6 +341,7 @@ body {
 /* Sections */
 .home-section {
     max-width: 1200px;
+    width: 100%
     margin: 60px auto;
     padding: 0 20px;
     color: #1a1a1a;
@@ -356,8 +357,9 @@ body {
 /* Featured Products */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat repeat(4, 1fr);;
     gap: 25px;
+    width: 100%;
 }
 
 .product-card {
@@ -726,6 +728,7 @@ body {
     max-width: 1200px;
     margin: 60px auto;
     padding: 20px;
+    width: 100%;
     font-family: 'Barlow Condensed', sans-serif;
 }
 
