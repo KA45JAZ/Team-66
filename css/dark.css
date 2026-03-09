@@ -373,6 +373,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card img {
@@ -385,6 +387,7 @@ body {
 .product-card h3 {
     margin-top: 10px;
     font-size: 22px;
+    flex-grow: 1;
 }
 
 .price {
@@ -401,6 +404,7 @@ body {
     text-decoration: none;
     border-radius: 6px;
     transition: 0.3s;
+    margin-top: auto;
 }
 
 .product-btn:hover {

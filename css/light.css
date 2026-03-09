@@ -368,6 +368,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card img {
@@ -381,6 +383,7 @@ body {
     margin-top: 10px;
     font-size: 22px;
     color: #1a1a1a;
+    flex-grow: 1;
 }
 
 .price {
@@ -397,6 +400,7 @@ body {
     text-decoration: none;
     border-radius: 6px;
     transition: 0.3s;
+    margin-top: auto;
 }
 
 .product-btn:hover {
