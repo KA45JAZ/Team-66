@@ -2,11 +2,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-
-
 $basket_count = isset($_SESSION['basket']) ? count($_SESSION['basket']) : 0;
-
-
 $is_logged_in = isset($_SESSION['user_id']);
 ?>
     
@@ -36,10 +32,11 @@ $is_logged_in = isset($_SESSION['user_id']);
 
   
   <nav class="bottom-nav">
-    <a href="productlist.php">MEN</a>
-    <a href="women.php">WOMEN</a>
-    <a href="kids.php">KIDS</a>
-    <a href="accessories.php">ACCESSORIES</a>
-    <a href="trainers.php">TRAINERS</a>
-  </nav>
+  <a href="category.php?cat=Men">MEN</a>
+  <a href="category.php?cat=Women">WOMEN</a>
+  <a href="category.php?cat=Kids">KIDS</a>
+  <a href="category.php?cat=Accessories">ACCESSORIES</a>
+  <a href="category.php?cat=Trainers">TRAINERS</a>
+</nav>
+
 </header>
