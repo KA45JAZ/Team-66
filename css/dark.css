@@ -358,12 +358,13 @@ body {
     margin-bottom: 20px;
 }
 
-/* Featured Products */
+/* Featured Products  */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     /*repeat(auto-fit, minmax(220px, 1fr));*/
     gap: 25px;
+    justify-content: center;
     width: 100%;
 }
 
@@ -375,6 +376,9 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
+
+    max-width: 260px;   /* prevents stretching */
+    //width: 100%;
 }
 
 .product-card img {
