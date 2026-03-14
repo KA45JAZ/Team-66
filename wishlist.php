@@ -12,8 +12,8 @@ $featured = $prod_stmt->fetchAll();
 ?>
 
 <div class="home-hero">
-    <h1>NO RESULTS FOUND</h1>
-    <p>We are sorry but we can’t find any results.</p>
+    <h1>YOUR WISHLIST IS EMPTY</h1>
+    <p>Tap the "Add to Wishlist" button next to anything you like the look of and we'll save it here. Then when you're ready, add it to your bag, check out, put it on, and then let's go</p>
     <a href="products.php" class="hero-btn">Shop Now</a>
 </div>
 
