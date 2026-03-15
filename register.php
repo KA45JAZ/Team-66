@@ -33,6 +33,10 @@
         </select>
 
         <button type="submit" class="register-btn">Register</button>
+        <p class="already-user">
+        Already a user? <a href="login.php">Log in</a>
+    </p>
+
     </form>
 
 </div>

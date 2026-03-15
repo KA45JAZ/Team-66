@@ -1,6 +1,5 @@
 <?php
 include 'navbar.php';
-session_start();
 ?>
 
 <div class="contact-container">
@@ -37,6 +36,29 @@ session_start();
         <button type="submit" class="contact-btn">Send Message</button>
 
     </form>
+
+    <div class="contact-details">
+        <h3>Opening Hours</h3>
+        <p>
+            Monday – Friday: 10am – 7pm<br>
+            Saturday & Sunday: 11am – 5pm
+        </p>
+
+        <h3>Contact Info</h3>
+        <p>
+            Phone: 0778753649<br>
+            Email: <a href="mailto:support@goodfit.com">support@goodfit.com</a><br>
+            We're always here to help.
+        </p>
+
+        <h3>Address</h3>
+        <p>
+            Goodfit<br>
+            16 Hazel Road<br>
+            Birmingham<br>
+            B4 7ET
+        </p>
+    </div>
 
 </div>
 
