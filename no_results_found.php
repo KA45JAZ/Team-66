@@ -13,7 +13,7 @@ $featured = $prod_stmt->fetchAll();
 
 <div class="home-hero">
     <h1>NO RESULTS FOUND</h1>
-    <p>We are sorry but we can’t find any results.</p>
+    <p>We are sorry but we can’t find any results test.</p>
     <a href="products.php" class="hero-btn">Shop Now</a>
 </div>
 
