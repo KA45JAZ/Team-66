@@ -17,7 +17,7 @@ if (!isset($_SESSION['basket']) || empty($_SESSION['basket'])) {
 $basket = $_SESSION['basket'];
 
 // Validate form fields
-$required = ['fullname', 'address1', 'city', 'postcode', 'phone'];
+$required = ['full_name', 'address1', 'city', 'postcode', 'phone'];
 foreach ($required as $field) {
     if (empty($_POST[$field])) {
         die("Missing required field: " . htmlspecialchars($field));
@@ -26,7 +26,7 @@ foreach ($required as $field) {
 
 // Collect form data
 $user_id = $_SESSION['user_id'];
-$fullname = $_POST['fullname'];
+$full_name = $_POST['full_name'];
 $address1 = $_POST['address1'];
 $address2 = $_POST['address2'] ?? '';
 $city = $_POST['city'];
@@ -45,13 +45,13 @@ try {
 
     // Insert order
     $order_stmt = $db->prepare("
-        INSERT INTO orders (user_id, fullname, address1, address2, city, postcode, phone, total_price, order_date)
+        INSERT INTO orders (user_id, full_name, address1, address2, city, postcode, phone, total_amount, order_date)
         VALUES (:uid, :fn, :a1, :a2, :city, :pc, :phone, :total, NOW())
     ");
 
     $order_stmt->execute([
         'uid' => $user_id,
-        'fn' => $fullname,
+        'fn' => $full_name,
         'a1' => $address1,
         'a2' => $address2,
         'city' => $city,
@@ -65,13 +65,13 @@ try {
 
     // Insert each item
     $item_stmt = $db->prepare("
-        INSERT INTO order_items (order_id, product_id, quantity, price)
-        VALUES (:oid, :pid, :qty, :price)
-    ");
+    INSERT INTO order_items (order_id, product_id, quantity, price_at_purchase)
+    VALUES (:oid, :pid, :qty, :price)
+");
 
     // Reduce stock
     $stock_stmt = $db->prepare("
-        UPDATE products SET stock = stock - :qty WHERE product_id = :pid
+        UPDATE products SET stock_quantity = stock_quantity - :qty WHERE product_id = :pid
     ");
 
     foreach ($basket as $item) {

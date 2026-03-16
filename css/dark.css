@@ -1,3 +1,24 @@
+/* 
+Styling List in order
+o	Overall Body
+o	Navbar
+o	Footer
+o	index
+o	register
+o	login
+o	password change
+o	contact us
+o	about us
+o	products
+o	category
+o	product page
+o	basket
+o	checkout
+o	order success
+o	order
+o	order view
+*/
+
 /* Make body take the full viewport height and use flex layout */
 body {
     display: flex;

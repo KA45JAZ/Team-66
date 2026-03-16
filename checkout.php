@@ -36,7 +36,7 @@ foreach ($basket as $item) {
             <form action="place_order.php" method="POST" class="checkout-form">
 
                 <label>Full Name</label>
-                <input type="text" name="fullname" required>
+                <input type="text" name="full_name" required>
 
                 <label>Address Line 1</label>
                 <input type="text" name="address1" required>
