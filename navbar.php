@@ -28,9 +28,9 @@ $is_admin = $is_logged_in && $_SESSION['role'] === 'admin';
 
     <div class="nav-right">
 
-  <button id="theme-toggle" class="nav-icon theme-btn">
-      <img src="images/moon.png" class="icon-img" alt="Toggle Theme">
-  </button>
+  <a href id="theme-toggle" class="nav-icon theme-btn">
+      <img src="images/moon2.png" class="icon-img" alt="Toggle Theme">
+  </a href>
 
   <a href="wishlist.php" class="nav-icon">
     <img src="images/wishlist.png" class="icon-img" alt="Wishlist">
