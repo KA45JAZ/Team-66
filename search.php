@@ -42,23 +42,6 @@ $products = $stmt->fetchAll();
 
 <div class="products-container">
 
-<<<<<<< HEAD
-    <h1 class="products-title">Search Results for "<?= htmlspecialchars($search) ?>"</h1>
-
-    <div class="product-grid">
-        <?php foreach ($products as $p): ?>
-            <div class="product-card">
-                <img src="<?= $p['image_url'] ?>" alt="<?= $p['name'] ?>">
-
-                <h3><?= $p['name'] ?></h3>
-
-                <p class="price">£<?= number_format($p['price'], 2) ?></p>
-
-                <a href="product.php?id=<?= $p['product_id'] ?>" class="product-btn">View Product</a>
-            </div>
-        <?php endforeach; ?>
-    </div>
-=======
 <h1 class="products-title">
 Search Results
 <?php if ($q != ''): ?>
@@ -118,7 +101,6 @@ View Product
 </div>
 
 <?php endif; ?>
->>>>>>> upstream/main
 
 </div>
 

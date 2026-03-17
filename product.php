@@ -9,7 +9,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 
 $product_id = intval($_GET['id']);
 
-// Fetch product , change product_name to name and stock to stock_quantity
+// Fetch product
 $stmt = $db->prepare("SELECT * FROM products WHERE product_id = :id");
 $stmt->execute(['id' => $product_id]);
 $product = $stmt->fetch();

@@ -399,7 +399,7 @@ body {
     flex-direction: column;
 
     max-width: 260px;   /* prevents stretching */
-    //width: 100%;
+    width: 100%;
 }
 
 .product-card img {
