@@ -34,4 +34,4 @@ $featured = $prod_stmt->fetchAll();
     </div>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?> hellow world
