@@ -1,3 +1,24 @@
+/* 
+Styling List in order
+o	Overall Body
+o	Navbar
+o	Footer
+o	index
+o	register
+o	login
+o	password change
+o	contact us
+o	about us
+o	products
+o	category
+o	product page
+o	basket
+o	checkout
+o	order success
+o	order
+o	order view
+*/
+
 /* Make body take the full viewport height and use flex layout */
 body {
     display: flex;
@@ -341,6 +362,7 @@ body {
 /* Sections */
 .home-section {
     max-width: 1200px;
+    width: 100%
     margin: 60px auto;
     padding: 0 20px;
     color: #1a1a1a;
@@ -356,8 +378,9 @@ body {
 /* Featured Products */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat repeat(4, 1fr);;
     gap: 25px;
+    width: 100%;
 }
 
 .product-card {
@@ -366,6 +389,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card img {
@@ -379,6 +404,7 @@ body {
     margin-top: 10px;
     font-size: 22px;
     color: #1a1a1a;
+    flex-grow: 1;
 }
 
 .price {
@@ -395,6 +421,7 @@ body {
     text-decoration: none;
     border-radius: 6px;
     transition: 0.3s;
+    margin-top: auto;
 }
 
 .product-btn:hover {
@@ -726,6 +753,7 @@ body {
     max-width: 1200px;
     margin: 60px auto;
     padding: 20px;
+    width: 100%;
     font-family: 'Barlow Condensed', sans-serif;
 }
 

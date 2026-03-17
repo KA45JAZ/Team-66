@@ -12,15 +12,15 @@ $featured = $prod_stmt->fetchAll();
 ?>
 
 <div class="home-hero">
-    <h1>Train Hard. Look Good. Feel Good.</h1>
-    <p>Your journey starts with the right gear.</p>
+    <h1>YOUR WISHLIST IS EMPTY</h1>
+    <p>Tap the "Add to Wishlist" button next to anything you like the look of and we'll save it here. Then when you're ready, add it to your bag, check out, put it on, and then let's go</p>
     <a href="products.php" class="hero-btn">Shop Now</a>
 </div>
 
 
 
 <div class="home-section">
-    <h2>Featured Products</h2>
+    <h2>KEEP SHOPPING FOR</h2>
 
     <div class="product-grid">
         <?php foreach ($featured as $p): ?>

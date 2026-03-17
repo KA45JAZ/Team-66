@@ -2,36 +2,40 @@
 
 <div class="about-container">
 
-    <h1>About GoodFit Sportswear</h1>
+    <h1>About Goodfit</h1>
 
     <p class="about-intro">
-        GoodFit Sportswear was created with one mission: to make high‑quality, affordable sportswear accessible to everyone.
-        Whether you're training at the gym, running outdoors, or just staying active, we believe you deserve clothing that
-        supports your goals without breaking your budget.
+        Welcome to Goodfit – your go-to place for stylish and comfortable sportswear. We offer a curated range of activewear 
+        including hats, tees, leggings, trainers and more, designed to help you look good and feel confident while staying active.
     </p>
 
-    <h2>Our Vision</h2>
+    <h2>Mission Statement</h2>
     <p>
-        We aim to empower everyday athletes with performance‑driven apparel that blends comfort, durability, and modern style.
-        Our vision is to become the go‑to brand for students, young adults, and fitness enthusiasts who want reliable sportswear
-        that fits their lifestyle.
+        At Goodfit, our mission is to create sports-optimised apparel that motivates individuals to stay active. We focus on durable, 
+        breathable fabrics and inclusive design so movement feels enjoyable rather than a chore. Our goal is to build a positive 
+        fitness community where everyone, regardless of age or fitness level, feels supported and encouraged.
     </p>
 
-    <h2>What We Offer</h2>
+    <h2>Our Story Timeline</h2>
+
     <ul class="about-list">
-        <li>Men’s, Women’s, and Kids’ sportswear</li>
-        <li>High‑performance trainers for all activities</li>
-        <li>Essential accessories including bottles, gloves, and bags</li>
-        <li>Affordable pricing without compromising quality</li>
-        <li>Fast, friendly customer support</li>
+        <li>
+            <strong>The Vision:</strong> We recognised that many activewear brands exist, but few are affordable for university students. 
+            That gap inspired Goodfit: stylish, comfortable and budget-friendly activewear.
+        </li>
+        <li>
+            <strong>The Vision:</strong> We conducted market research, ordered and tested samples, and refined designs that met real 
+            customer needs—leading to our first Goodfit collection.
+        </li>
+        <li>
+            <strong>The Vision:</strong> After months of planning, Goodfit launched with strong support from students, trainers, and 
+            fitness communities—giving rise to the #Goodfit Collective.
+        </li>
+        <li>
+            <strong>The Vision:</strong> Goodfit will continue to innovate, prioritise sustainability, and introduce new collections 
+            so we remain competitive and true to our values.
+        </li>
     </ul>
-
-    <h2>Why Choose GoodFit?</h2>
-    <p>
-        We design every product with real people in mind. Our clothing is tested for comfort, flexibility, and durability,
-        ensuring you get the best value for your money. With a clean, modern shopping experience and a growing product line,
-        GoodFit is here to support your fitness journey—every step of the way.
-    </p>
 
     <div class="about-banner">
         <p>Train Hard. Look Good. Feel Good.</p>
