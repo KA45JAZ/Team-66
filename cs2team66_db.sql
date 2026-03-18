@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2026 at 02:36 PM
+-- Generation Time: Mar 18, 2026 at 10:23 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -111,7 +111,8 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`order_id`, `user_id`, `order_date`, `total_amount`, `status`, `full_name`, `address1`, `address2`, `city`, `postcode`, `phone`) VALUES
 (1, 1, '2026-03-14 20:30:56', 22.00, 'pending', 'Jaspinder Shergill', '3 Lavender Close', '', 'Walsall', 'WS5 4ST', '07368209033'),
-(2, 1, '2026-03-14 20:49:50', 12.00, 'pending', 'Jaspinder Shergill', '3 Lavender Close', '', 'Walsall', 'WS5 4ST', '07368209033');
+(2, 1, '2026-03-14 20:49:50', 12.00, 'pending', 'Jaspinder Shergill', '3 Lavender Close', '', 'Walsall', 'WS5 4ST', '07368209033'),
+(3, 1, '2026-03-17 14:45:58', 17.00, 'pending', 'Jaspinder Shergill', '3 Lavender Close', '', 'Walsall', 'WS5 4ST', '07368209033');
 
 -- --------------------------------------------------------
 
@@ -133,7 +134,8 @@ CREATE TABLE `order_items` (
 
 INSERT INTO `order_items` (`order_item_id`, `order_id`, `product_id`, `quantity`, `price_at_purchase`) VALUES
 (1, 1, 29, 1, 22.00),
-(2, 2, 26, 1, 12.00);
+(2, 2, 26, 1, 12.00),
+(3, 3, 27, 1, 17.00);
 
 -- --------------------------------------------------------
 
@@ -158,8 +160,33 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `category_id`, `name`, `description`, `price`, `stock_quantity`, `image_url`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Men’s Performance Hoodie', 'Breathable, warm hoodie ideal for training. Providing that unmistakable outdoors inspired technical design with modern cuts founded for the streets. The full zip fastening front and adjustable branded cuffs provide ample coverage from the elements as does the toggle adjustable hood. Side hand pockets combine with secure zip fastening chest pocket to keep your small essentials safe while you’re active.', 29.99, 3, 'https://www.footasylum.com/images/products/large/4105935.jpg', '2025-12-05 11:43:06', '2026-03-06 17:24:29'),
+(2, 1, 'Men’s Training Joggers', 'Open Hem Joggers in Black. Discover comfort and style with this ultimate blend of relaxed fit and modern versatility. Crafted for the guy who values comfort without sacrificing style, these joggers deliver a standard fit that\'s generously relaxed through the seat and thighs.', 24.99, 15, 'https://www.footasylum.com/images/products/large/4122229.jpg', '2025-12-05 11:43:06', '2026-03-06 17:13:23'),
+(3, 1, 'Men’s Compression Shirt', 'Designed for ultra-tight, physique‑enhancing performance with a compression fit that feels like a second skin, using stretchy ribbed fabric', 19.99, 25, 'https://cdn.shopify.com/s/files/1/0156/6146/files/images-GSxCarlosLSTeeGSLightGreyGSOnyxGreyA4B7I_GCH2_0486_V3_1920x.jpg?v=1770642276', '2025-12-05 11:43:06', '2026-03-06 17:21:47'),
+(4, 1, 'Men’s Running Shorts', 'Running Shorts in Escape Green. Experience ultimate comfort and performance with the Running Shorts. Lightweight, breathable, and designed for active living. Meticulously engineered for optimal performance and unparalleled comfort.', 14.99, 30, 'https://www.footasylum.com/images/products/large/4127173.jpg', '2025-12-05 11:43:06', '2026-03-06 17:23:48'),
+(5, 1, 'Men’s Sleeveless Gym Top', 'Tank Top in Black. A running tank top designed for comfort and performance during your runs. Made from ultra-lightweight Dri-FIT fabric that wicks away sweat to keep you dry and cool. ', 12.99, 40, 'https://www.gymshark.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fwl6q2in9o7k3%2Fw9mrUGjnaBf8TBZL3aVrC%2Fb8f654d2ae9cd134e21d262111354a54%2FSoftSculpt-Ecom-PLP_Link_Card_-_24437663.jpeg&w=1920&q=75', '2025-12-05 11:43:06', '2026-03-06 17:29:17'),
+(6, 2, 'Women’s Yoga Leggings', 'Yoga Pants in Black. Elevate your activewear with the Women\'s Yoga Pant, premium, high-performance leggings designed for yoga, gym sessions, running, or everyday comfort. ', 22.99, 30, 'https://www.footasylum.com/images/products/large/4127526_1.jpg', '2025-12-05 11:43:22', '2026-03-06 17:38:32'),
+(7, 2, 'Women’s Sports Bra', 'Womens Sports Bra in Midnight and Spring Veil. This supportive medium-impact bra features a sleek halter-style design with ruched detailing at the front for added shape and comfort. Crafted from premium, breathable, stretch fabric that moves with you, it offers adjustable straps, secure underband, and subtle branding for a confident fit during yoga, running, or HIIT', 18.99, 25, 'https://www.footasylum.com/images/products/large/4126933.jpg', '2025-12-05 11:43:22', '2026-03-06 17:43:00'),
+(8, 2, 'Women’s Running Jacket', 'Womens Align Running Jacket in Midship Midnight and Spring Veil. This lightweight, packable running jacket features a full zip, stand collar, mesh vents for breathability, and reflective accents for visibility. The water-resistant, windproof shell with stretch panels provides freedom of movement, perfect for outdoor runs, training, or casual layering.', 34.99, 10, 'https://www.footasylum.com/images/products/large/4126924_3.jpg', '2025-12-05 11:43:22', '2026-03-07 21:35:28'),
+(9, 2, 'Women’s Training Tee', 'Soft, fitted training t‑shirt with comfy, easy wear styles, this collection is as versatile as your workouts. ', 14.99, 35, 'https://cdn.shopify.com/s/files/1/0156/6146/files/TrainingBabyTeeGSBlackB3B9F-BB2J6462_94961c82-4728-4fc3-9447-87c0d267cf01_1920x.jpg?v=1740429547', '2025-12-05 11:43:22', '2026-03-07 21:36:46'),
+(10, 2, 'Women’s Gym Shorts', 'Whether you’re just ticking off your daily miles or training for a marathon, our running collection keeps you going with breathable, sweat-wicking fabrics, soft brushed linings and reflective details to keep you safe.', 16.99, 20, 'https://cdn.shopify.com/s/files/1/0156/6146/files/images-RunningBetter2_in_1ShortGSIronBlueB3C4D_UCTM_0310_V1_640x.jpg?v=1770715718', '2025-12-05 11:43:22', '2026-03-07 21:38:28'),
+(11, 3, 'Kids Training Hoodie', 'Woven Running Jacket in Black. It is built to do it all. Providing that unmistakable outdoors inspired technical design with modern cuts founded on the streets. The full zip fastening front and adjustable branded cuffs provide ample coverage from the elements as does the fixed hood', 17.99, 20, 'https://www.footasylum.com/images/products/productlistings/4105914.jpg', '2025-12-05 11:43:46', '2026-03-07 21:40:54'),
+(12, 3, 'Kids Sports Shorts', 'Shorts in Midnight Echo and Steam Green. Finding space in your activewear collection has never been easier as these minimally designed but maximum comfort shorts. With an elasticated adjustable drawstring waistband, open side pockets for your hands and/or small essentials such as phone and keys, contrast panels', 9.99, 30, 'https://www.footasylum.com/images/products/large/4126956_1.jpg', '2025-12-05 11:43:46', '2026-03-07 21:42:10'),
+(13, 3, 'Kids Running Shoes', 'Lightweight trainers for kids. Its trail-specific sole and high abrasion rubber are designed to walk on rugged terrain while the Rearfoot GEL cushioning ensures unbeatable comfort. ', 24.99, 15, 'https://www.footasylum.com/images/products/large/4097136_1.jpg', '2025-12-05 11:43:46', '2026-03-07 22:05:39'),
+(14, 3, 'Kids Cotton Tee', 'T-Shirt in Space Blue and Navy Blue. Designed to keep pace with your adrenaline-fuelled active lifestyle, this sporty short-sleeved tee from Trailberg is crafted from lightweight woven 4-way stretch fabric and is equipped with laser-cut perforations to the back to allow for increased airflow. ', 7.99, 40, 'https://www.footasylum.com/images/products/large/4123371.jpg', '2025-12-05 11:43:46', '2026-03-07 21:48:29'),
+(15, 3, 'Kids Joggers', 'Comfortable joggers in Black for school or play. Comfort is supplied via an elasticated waistband and ribbed cuffs, ensuring a snug personalised feel is easily attained. ', 12.99, 25, 'https://www.footasylum.com/images/products/large/4092106.jpg', '2025-12-05 11:43:46', '2026-03-07 21:49:54'),
+(16, 4, 'Sports Water Bottle', 'With a 0.89L (30 oz) capacity, you can now stay hydrated in style thanks to this outstanding bottle. Featuring a wide opening for ice and easy cleaning, leak proof straw lid, convenient car cup compatible for those long demanding journeys, easy carry stainless steel handle and double wall stainless steel vacuum insulated.', 8.99, 50, 'https://www.footasylum.com/images/products/large/4121624.jpg', '2025-12-05 11:43:58', '2026-03-07 21:50:59'),
+(17, 4, 'Gym Gloves', 'Grip‑enhancing gloves for weightlifting.', 12.99, 20, 'https://cdn.shopify.com/s/files/1/0156/6146/files/images-LegacyLiftingGlovesV2GSBlackI1B7Q_BB2J_0007_V1_640x.jpg?v=1772051427', '2025-12-05 11:43:58', '2026-03-07 21:52:48'),
+(18, 4, 'Training Backpack', 'Backpack in Jet Black. Spacious and stylish portable storage for the \r\ngym-goer, worker, hiker, commuter or traveller. Large main double zip top fastening compartment with separate additional secure zip fastening compartments to side and front', 29.99, 10, 'https://cdn.shopify.com/s/files/1/0156/6146/files/CoatedPursuitBackpackGSBlackI3A6Y-BB2J0066_1920x.jpg?v=1724429998', '2025-12-05 11:43:58', '2026-03-07 21:54:58'),
+(19, 4, 'Sweatband Set', 'Headband and wristbands for workouts that absorbs sweat and allows breathability whilst also providing a tight fit.', 6.99, 40, 'https://cdn.shopify.com/s/files/1/0156/6146/files/images-AdaptSeamlessHeadbandENGAA0005GSBlackGSAsphaltGreyI2C4R_BDRY_0263_V2_640x.jpg?v=1772051563', '2025-12-05 11:43:58', '2026-03-07 21:57:34'),
+(20, 4, 'Shaker Bottle', 'Shaker Bottle 20 Oz in Black 2.0. Shaken not stirred! Infuse your water or add in protein powder then simply shake and drink. The 20 oz Active Shaker bottle keeps your drink cold for hours thanks to its innovative double-wall vacuum insulation, whilst the rounded interior makes mixing and cleaning a doddle.', 7.99, 35, 'https://cdn.shopify.com/s/files/1/0156/6146/files/images-BetterShakerBottleGSBlackI1B6N_BB2J_0080_V2_640x.jpg?v=1763562941', '2025-12-05 11:43:58', '2026-03-07 21:58:58'),
+(21, 5, 'Running Trainers', 'Running Trainers in Black and Blue. With a regular width and secure lace fastening closure, this slick footwear from Puma is inspired by performance and designed to slot in perfectly with your busy lifestyle. With a rounded toe, NITRO™ heel booster for optimal comfort, this exquisite shoe effortlessly fuses dynamism with functionality.', 49.99, 15, 'https://www.footasylum.com/images/products/large/4125761_1.jpg', '2025-12-05 11:44:12', '2026-03-07 22:06:14'),
+(22, 5, 'Gym Training Shoes', 'Stable shoes designed for lifting and HIIT. A flexible, versatile training shoe built for feel-good workouts.  ', 44.99, 12, 'https://www.footasylum.com/images/products/productlistings/4124942.jpg', '2025-12-05 11:44:12', '2026-03-07 22:03:28'),
+(23, 5, 'Trail Running Shoes', 'Explore the outdoors with this shoe designed for both trail and road running. This shoe features an ultra-responsive foam midsole for superior cushioning. The upper combines mesh with tighter woven fabric in high-wear areas like the toes, offering breathability and durability.', 59.99, 10, 'https://www.footasylum.com/images/products/large/4124980_1.jpg', '2025-12-05 11:44:12', '2026-03-07 22:07:32'),
+(24, 5, 'Everyday Comfort Trainers', 'Soft‑sole trainers for daily wear. Key features include a midsole for impact absorption, dual-density cushioning.', 39.99, 20, 'https://www.footasylum.com/images/products/large/4133970_1.jpg', '2025-12-05 11:44:12', '2026-03-07 22:09:44'),
+(25, 5, 'Kids Sport Trainers', 'Durable trainers for active kids designed for a faster, lighter feel without sacrificing protection. The sport-inspired nylon ripstop and TPU upper offers a durable yet breathable shell that stands up to the demands of the trail. For complete confidence underfoot, this shoe integrates a full-length rock plate for protection,', 29.99, 18, 'https://www.footasylum.com/images/products/large/4124776_1.jpg', '2025-12-05 11:44:12', '2026-03-07 22:11:14'),
 (26, 1, 'Adidas Men\'s Tiro24 Short Sleeve Performance T-Shirt', 'The adidas Tiro24 Short Sleeve Performance T-Shirt is built for football training with a streamlined cut. Designed to support active sessions, it offers a clean, athletic fit.', 12.00, 0, 'products/mens/adidas_blue_t_front.png', '2026-03-14 18:46:08', '2026-03-14 20:49:50'),
-(27, 1, 'Nike Icon Futura T-Shirt Mens', 'Keep it simple. The Nike Icon Futura T-Shirt keeps things classic with a solid colour-way that makes the contrasting Nike wordmark and Swoosh pop. Cut to a regular fit, it’s the easy tee you’ll reach for again and again.', 17.00, 1, 'products/mens/nike_black_t_front.png', '2026-03-14 18:46:08', '2026-03-14 20:02:01'),
+(27, 1, 'Nike Icon Futura T-Shirt Mens', 'Keep it simple. The Nike Icon Futura T-Shirt keeps things classic with a solid colour-way that makes the contrasting Nike wordmark and Swoosh pop. Cut to a regular fit, it’s the easy tee you’ll reach for again and again.', 17.00, 0, 'products/mens/nike_black_t_front.png', '2026-03-14 18:46:08', '2026-03-17 14:45:58'),
 (28, 1, 'Under Armour Logo T-Shirt Mens', 'Everyone makes graphic Ts...but Under Armour makes them better. The fabric we use is light, soft, and quick-drying.', 19.99, 1, 'products/mens/underarmour_blue_t_front.png', '2026-03-14 18:46:08', '2026-03-14 20:02:01'),
 (29, 1, 'The North Face 24/7 Short Sleeve T-Shirt Mens', 'Wherever you like to train and however you like to work out, the 100% recycled 24/7 T-Shirt will help keep you dry. Engineered with FlashDry™ technology acting like a second skin, the fabric works to draw moisture to the surface where it rapidly evaporates.', 22.00, 0, 'products/mens/northface_blue_t_front.png', '2026-03-14 18:46:08', '2026-03-14 20:30:56'),
 (30, 1, 'Puma Men\'s Short-Sleeve Performance T-Shirt', 'Puma\'s Short-Sleeve Performance T-Shirt merges athletic design with performance features. Designed for movement, this activewear piece offers breathability with a comfortable fit.', 15.00, 0, 'products/mens/puma_orange_t_front.png', '2026-03-14 18:46:08', '2026-03-14 18:46:08'),
@@ -344,13 +371,13 @@ ALTER TABLE `contact_messages`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `products`
