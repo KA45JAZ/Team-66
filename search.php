@@ -38,6 +38,11 @@ if ($max_price != '') {
 $stmt = $db->prepare($sql);
 $stmt->execute($params);
 $products = $stmt->fetchAll();
+
+if (empty($products)) {
+    header("Location: no_results_found.php?q=" . urlencode($q));
+    exit();
+}   
 ?>
 
 <div class="products-container">

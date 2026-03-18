@@ -2,6 +2,8 @@
 include 'navbar.php';
 include 'connectdb.php';
 
+$q = $_GET['q'] ?? '';
+
 // Fetch categories
 $cat_stmt = $db->query("SELECT category_id, category_name, description FROM categories");
 $categories = $cat_stmt->fetchAll();
@@ -13,7 +15,7 @@ $featured = $prod_stmt->fetchAll();
 
 <div class="home-hero">
     <h1>NO RESULTS FOUND</h1>
-    <p>We are sorry but we can’t find any results test.</p>
+    <p>We are sorry but we can’t find any results for "<?= htmlspecialchars($q) ?>".</p>
     <a href="products.php" class="hero-btn">Shop Now</a>
 </div>
 
