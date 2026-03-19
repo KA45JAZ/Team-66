@@ -42,7 +42,8 @@ $orders = $order_stmt->fetchAll();
             <a href="orders.php">Orders</a>
             <a href="wishlist.php">Wishlist</a>
             <a href="basket.php">Basket</a>
-            <a href="change_password.php">Change Password</a>
+            <a href="password_change.php">Change Password</a>
+            <a href="logout.php" class="profile-btn delete-btn">Logout</a>
         </div>
 
         
