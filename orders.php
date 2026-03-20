@@ -13,7 +13,7 @@ $user_id = $_SESSION['user_id'];
 
 // Fetch all orders for this user
 $stmt = $db->prepare("
-    SELECT order_id, total_price, order_date 
+    SELECT order_id, total_amount, order_date 
     FROM orders 
     WHERE user_id = :uid 
     ORDER BY order_date DESC

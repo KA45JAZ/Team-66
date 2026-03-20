@@ -1301,4 +1301,108 @@ remove+checkout
 }
 
 /* -----------------------END OF ORDER VIEW SECTION ---------------------*/
+/* ----------------------- Customer dashboard SECTION ----------------------------------*/
+
+
+/* Dashboard Layout */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* Header */
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    color: #3b5cff;
+    font-size: 36px;
+}
+
+/* Layout */
+.dashboard-layout {
+    display: flex;
+    gap: 30px;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dashboard-sidebar a {
+    padding: 12px;
+    border: 2px solid #3b5cff;
+    text-decoration: none;
+    color: #3b5cff;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.dashboard-sidebar a:hover {
+    background: #3b5cff;
+    color: white;
+}
+
+/* Main */
+.dashboard-main {
+    flex: 1;
+}
+
+/* Cards */
+.dashboard-card {
+    border: 2px solid #3b5cff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+/* Quick links */
+.quick-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.quick-links a {
+    background: #3b5cff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+/* Status badges */
+.status {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Colours */
+.status.pending { background: orange; }
+.status.shipped { background: blue; }
+.status.delivered { background: green; }
+.status.cancelled { background: red; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .dashboard-layout {
+        flex-direction: column;
+    }
+
+    .dashboard-sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+}
+
+/* -----------------------END OF customer dashboard SECTION ---------------------*/
 /* ----------------------- SECTION ----------------------------------*/
