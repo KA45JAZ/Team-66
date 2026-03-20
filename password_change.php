@@ -26,6 +26,10 @@ include 'navbar.php';
         <label>Confirm New Password</label>
         <input type="password" name="confirm_password" required>
 
+        <p class="password-rules">
+            Password must be at least 8 characters long and include 1 uppercase/capital letter,
+            1 lowercase/small letter, 1 number and 1 special character.
+        </p>
         <button type="submit" class="password-btn">Update Password</button>
 
     </form>
