@@ -14,6 +14,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
+    if(strlen($new)<8){
+        header("Location: password_change.php?error=Password must be at least 8 characters long.");
+        exit;
+    }
+
+    if(!preg_match('/[A-Z]/', $new)){
+        header("Location: password_change.php?error=Password must contain at least one capital/uppercase letter.");
+        exit;
+    }
+
+    if(!preg_match('/[a-z]/', $new)){
+        header("Location: password_changing.php?error=Password must contain at least one small.lowercase letter.");
+        exit;
+    }
+
+    if(!preg_match('/[0-9]/', $new)){
+        header("Location: password_change.php?error=Password must contain at least one number.");
+        exit;
+    }
+
+    if(!preg_match('/[^A-Za-z0-9]/', $new)){
+        header("Location:password_change.php?=Password must contain at least one special character.");
+        exit;
+    }
+
     $stmt = $db->prepare("SELECT password_hash FROM users WHERE user_id = :id LIMIT 1");
     $stmt->bindParam(':id', $user_id);
     $stmt->execute();
