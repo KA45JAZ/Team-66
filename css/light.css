@@ -1405,4 +1405,21 @@ remove+checkout
 }
 
 /* -----------------------END OF customer dashboard SECTION ---------------------*/
+/* ----------------------- write review SECTION ----------------------------------*/
+.star-rating{
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.star{
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+#rating-message{
+    margin-top: 8px;
+    font-size: 14px;
+    color: black;
+}
+/* -----------------------END OF write review SECTION ---------------------*/
 /* ----------------------- SECTION ----------------------------------*/

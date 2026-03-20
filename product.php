@@ -108,7 +108,7 @@ $rating_data = $avg_stmt->fetch();
                 </p>
 
                 <p class="review-meta">
-                    <?= htmlspecialchars($review['name']) ?> • 
+                    <?= htmlspecialchars($review['reviewer_name']) ?> • 
                     <?= date("d M Y", strtotime($review['review_date'])) ?>
                 </p>
 
