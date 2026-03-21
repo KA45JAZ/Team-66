@@ -36,9 +36,9 @@ $is_admin = $is_logged_in && $_SESSION['role'] === 'admin';
     <img src="images/wishlist.png" class="icon-img" alt="Wishlist">
   </a>
 
-  <a href="<?php echo $is_logged_in ? 'account.php' : 'login.php'; ?>" class="nav-icon">
+  <a href="<?php echo $is_logged_in ? 'customer_dashboard.php' : 'login.php'; ?>" class="nav-icon">
     <img src="images/account.png" class="icon-img" alt="Account">
-  </a>
+</a>
 
   <?php if ($is_admin): ?>
     <a href="admin_dashboard.php" class="nav-icon">
