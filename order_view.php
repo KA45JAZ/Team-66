@@ -34,7 +34,7 @@ if (!$order) {
 
 // Fetch items
 $item_stmt = $db->prepare("
-    SELECT oi.*, p.product_name, p.image_url
+    SELECT oi.*, p.name, p.image_url
     FROM order_items oi
     JOIN products p ON oi.product_id = p.product_id
     WHERE oi.order_id = :oid
@@ -58,9 +58,9 @@ $items = $item_stmt->fetchAll();
                 <div class="order-item">
                     <img src="<?= $item['image_url'] ?>" class="order-img">
                     <div>
-                        <p class="order-name"><?= $item['product_name'] ?></p>
+                        <p class="order-name"><?= $item['name'] ?></p>
                         <p class="order-qty">Qty: <?= $item['quantity'] ?></p>
-                        <p class="order-price">£<?= number_format($item['price'] * $item['quantity'], 2) ?></p>
+                        <p class="order-price">£<?= number_format($item['price_at_purchase'] * $item['quantity'], 2) ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -74,7 +74,7 @@ $items = $item_stmt->fetchAll();
         <div class="order-right">
             <h2>Delivery Address</h2>
 
-            <p class="address-line"><?= htmlspecialchars($order['fullname']) ?></p>
+            <p class="address-line"><?= htmlspecialchars($order['full_name']) ?></p>
             <p class="address-line"><?= htmlspecialchars($order['address1']) ?></p>
 
             <?php if (!empty($order['address2'])): ?>
