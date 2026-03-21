@@ -25,41 +25,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         5 => 'trainers'
     ];
 
-    $folder = $categoryFolders[$category_id];
+    // Fallback folder if category invalid
+    $folder = $categoryFolders[$category_id] ?? "misc";
+
+    // Build target directory
+    $targetDir = "products/$folder/";
+
+    // Ensure folder exists
+    if (!is_dir($targetDir)) {
+        mkdir($targetDir, 0777, true);
+    }
 
     // Handle image upload
     $imageFile = $_FILES['image'];
 
     if ($imageFile['error'] === 0) {
 
-        $filename = basename($imageFile['name']);
-        $targetPath = "products/$folder/" . $filename;
-
-        // Move uploaded file
-        if (move_uploaded_file($imageFile['tmp_name'], $targetPath)) {
-
-            // Insert into database
-            $stmt = $db->prepare("
-                INSERT INTO products 
-                (category_id, name, description, price, stock_quantity, image_url, created_at, updated_at)
-                VALUES 
-                (:category_id, :name, :description, :price, :stock, :image_url, NOW(), NOW())
-            ");
-
-            $stmt->execute([
-                ':category_id' => $category_id,
-                ':name' => $name,
-                ':description' => $description,
-                ':price' => $price,
-                ':stock' => $stock,
-                ':image_url' => $targetPath
-            ]);
-
-            header("Location: admin_products.php?success=Product added");
-            exit;
-
+        // Validate file type
+        $allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+        if (!in_array($imageFile['type'], $allowedTypes)) {
+            $error = "Invalid image type. Only JPG, PNG, and WEBP allowed.";
         } else {
-            $error = "Failed to upload image.";
+
+            // Generate unique filename
+            $ext = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+            $filename = time() . "_" . uniqid() . "." . $ext;
+
+            $targetPath = $targetDir . $filename;
+
+            // Move uploaded file
+            if (move_uploaded_file($imageFile['tmp_name'], $targetPath)) {
+
+                // Insert into database
+                $stmt = $db->prepare("
+                    INSERT INTO products 
+                    (category_id, name, description, price, stock_quantity, image_url, created_at, updated_at)
+                    VALUES 
+                    (:category_id, :name, :description, :price, :stock, :image_url, NOW(), NOW())
+                ");
+
+                $stmt->execute([
+                    ':category_id' => $category_id,
+                    ':name' => $name,
+                    ':description' => $description,
+                    ':price' => $price,
+                    ':stock' => $stock,
+                    ':image_url' => $targetPath
+                ]);
+
+                header("Location: admin_products.php?success=Product added");
+                exit;
+
+            } else {
+                $error = "Failed to upload image.";
+            }
         }
 
     } else {
