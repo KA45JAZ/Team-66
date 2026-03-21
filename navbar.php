@@ -67,5 +67,13 @@ $is_admin = $is_logged_in && $_SESSION['role'] === 'admin';
     <a href="category.php?cat=4">ACCESSORIES</a>
     <a href="category.php?cat=5">TRAINERS</a>
   </nav>
+  <?php if ($_SESSION['role'] === 'admin'): ?>
+    <nav class="bottom-nav">
+      <a href="admin_dashboard.php">Admin Dashboard</a>
+      <a href="admin_products.php">Manage Products</a>
+      <a href="admin_categories.php">Manage Categories</a>
+      <a href="admin_orders.php">Manage Orders</a>
+    </nav>
+  <?php endif; ?>
 
 </header>

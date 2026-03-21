@@ -4,7 +4,8 @@ require 'admin_check.php';
 require 'connectdb.php';
 
 $stmt = $db->query("
-    SELECT o.order_id, o.user_id, o.total_amount, o.status, o.order_date, u.username
+    SELECT o.order_id, o.user_id, o.total_amount, o.status, o.order_date, 
+    CONCAT(u.first_name, ' ', u.last_name) AS full_name
     FROM orders o
     JOIN users u ON o.user_id = u.user_id
     ORDER BY o.order_date DESC
@@ -31,7 +32,7 @@ $orders = $stmt->fetchAll();
             <?php foreach ($orders as $order): ?>
                 <tr>
                     <td><?= $order['order_id'] ?></td>
-                    <td><?= htmlspecialchars($order['username']) ?></td>
+                    <td><?= htmlspecialchars($order['full_name']) ?></td>
                     <td>£<?= number_format($order['total_amount'], 2) ?></td>
                     <td>
                         <span class="status-badge status-<?= strtolower($order['status']) ?>">

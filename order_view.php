@@ -67,7 +67,7 @@ $items = $item_stmt->fetchAll();
 
             <hr>
 
-            <h3 class="order-total">Total Paid: £<?= number_format($order['total_price'], 2) ?></h3>
+            <h3 class="order-total">Total Paid: £<?= number_format($order['total_amount'], 2) ?></h3>
         </div>
 
         <!-- RIGHT: Delivery -->

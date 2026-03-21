@@ -42,7 +42,7 @@ $orders = $stmt->fetchAll();
                 <tr>
                     <td>#<?= $o['order_id'] ?></td>
                     <td><?= date("d M Y, H:i", strtotime($o['order_date'])) ?></td>
-                    <td>£<?= number_format($o['total_price'], 2) ?></td>
+                    <td>£<?= number_format($o['total_amount'], 2) ?></td>
                     <td>
                         <a href="order_view.php?id=<?= $o['order_id'] ?>" class="view-btn">View</a>
                     </td>

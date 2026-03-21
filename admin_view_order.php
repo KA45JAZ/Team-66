@@ -12,7 +12,7 @@ $order_id = $_GET['id'];
 
 // Fetch order
 $stmt = $db->prepare("
-    SELECT o.*, u.username, u.email
+    SELECT o.*, CONCAT(u.first_name, ' ', u.last_name) AS full_name, u.email
     FROM orders o
     JOIN users u ON o.user_id = u.user_id
     WHERE o.order_id = :id
@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST" class="admin-form">
         <select name="status" required>
             <?php
-            $statuses = ['Pending', 'Processing', 'Shipped', 'Completed', 'Cancelled'];
+            $statuses = ['Pending', 'Shipped', 'Delivered', 'Cancelled'];
             foreach ($statuses as $status):
             ?>
                 <option value="<?= $status ?>" <?= $order['status'] === $status ? 'selected' : '' ?>>
