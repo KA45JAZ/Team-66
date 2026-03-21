@@ -91,6 +91,16 @@ $items = $item_stmt->fetchAll();
 
     <a href="orders.php" class="back-btn">Back to Orders</a>
 
+    <?php if ($order['status'] === 'pending'): ?>
+
+    <a href="return_product.php?order_id=<?= $order['order_id'] ?>"
+       class="return-btn"
+       onclick="return confirm('Are you sure you want to cancel this order?');">
+        Cancel Order
+    </a>
+
+<?php endif; ?>
+
 </div>
 
 <?php include 'footer.php'; ?>

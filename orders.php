@@ -13,7 +13,7 @@ $user_id = $_SESSION['user_id'];
 
 // Fetch all orders for this user
 $stmt = $db->prepare("
-    SELECT order_id, total_amount, order_date 
+    SELECT order_id, total_amount, order_date, status
     FROM orders 
     WHERE user_id = :uid 
     ORDER BY order_date DESC
@@ -35,6 +35,9 @@ $orders = $stmt->fetchAll();
                 <th>Order #</th>
                 <th>Date</th>
                 <th>Total</th>
+                <th>Status</th>
+                <th>Action</th>
+
                 <th></th>
             </tr>
 
@@ -43,6 +46,7 @@ $orders = $stmt->fetchAll();
                     <td>#<?= $o['order_id'] ?></td>
                     <td><?= date("d M Y, H:i", strtotime($o['order_date'])) ?></td>
                     <td>£<?= number_format($o['total_amount'], 2) ?></td>
+                    <td>  <span class="status <?= $o['status'] ?>"> <?= ucfirst($o['status']) ?> </span> </td>
                     <td>
                         <a href="order_view.php?id=<?= $o['order_id'] ?>" class="view-btn">View</a>
                     </td>
