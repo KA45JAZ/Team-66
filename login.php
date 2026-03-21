@@ -20,6 +20,7 @@
 
         <label>Password</label>
         <input type="password" name="password" required>
+        <p><a href="forgot_password.php">Forgotten Password?</a></p>
 
         <button type="submit" class="login-btn">Login</button>
 

@@ -21,11 +21,17 @@
         <input type="email" name="email" required>
 
         <label>Phone</label>
-        <input type="text" name="phone">
+        <input type="text" name="phone" pattern="[0-9]{0,11}" maxlength="11">
 
         <label>Password</label>
         <input type="password" name="password" required>
 
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" required>
+        <p class="password-rules">
+            Password must be minimum 8 characters long, include 1 uppercase letter,
+            one lower case letter, 1 number and 1 special character.
+        </p>
         <label>Role</label>
         <select name="role">
             <option value="customer">Customer</option>
