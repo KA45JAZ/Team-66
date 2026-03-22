@@ -1,20 +1,16 @@
-<?php include 'navbar.php'; ?>
+<div class="chatbot-container">
 
-<div style="padding: 50px 20px; max-width: 700px; margin: auto;">
+    <h1 class="chatbot-title">Chatbot</h1>
 
-    <h1 style="text-align:center; color:#4a6cf7;">Chatbot</h1>
-
-    <form method="POST" style="margin-top:30px; display:flex; gap:10px;">
-        <input type="text" name="message" placeholder="Ask a question..." required 
-        style="flex:1; padding:10px; border-radius:8px; border:1px solid #ccc;">
+    <form method="POST" class="chatbot-form">
+        <input type="text" name="message" placeholder="Ask a question..." required class="chatbot-input">
         
-        <button type="submit" 
-        style="padding:10px 20px; background:#4a6cf7; color:white; border:none; border-radius:8px;">
-        Send
+        <button type="submit" class="chatbot-button">
+            Send
         </button>
     </form>
 
-    <div style="margin-top:30px; padding:20px; background:#f9f9f9; border-radius:10px;">
+    <div class="chatbot-response">
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $msg = strtolower($_POST['message']);
@@ -39,5 +35,3 @@
     </div>
 
 </div>
-
-<?php include 'footer.php'; ?>

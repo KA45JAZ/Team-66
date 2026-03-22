@@ -33,5 +33,5 @@ $featured = $prod_stmt->fetchAll();
         <?php endforeach; ?>
     </div>
 </div>
-
+<?php include 'chatbot-overlay.php'; ?>
 <?php include 'footer.php'; ?>

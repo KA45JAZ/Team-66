@@ -20,7 +20,7 @@ o	order view
 o	customer dashboard
 o   write review
 o   admin dashboard
-o
+o   chatbot
 */
 
 /* Make body take the full viewport height and use flex layout */
@@ -1730,4 +1730,65 @@ remove+checkout
 /* Title alignment */
 .admin-title {
     text-align: center;
+}
+/* ------------------------END OF ADMIN DASHBOARD SECTION ---------------------*/
+/* ------------------------ CHATBOT SECTION --------------------------------- */
+.chatbot-container {
+    padding: 30px 20px;
+    max-width: 700px;
+    background: #ebebeb;
+    border-radius: 12px;
+}
+
+.chatbot-title {
+    text-align: center;
+    color: #4a6cf7;
+}
+
+.chatbot-form {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.chatbot-input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #000;
+}
+
+.chatbot-input::placeholder {
+    color: #777;
+}
+
+.chatbot-button {
+    padding: 12px 20px;
+    background: #4a6cf7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chatbot-button:hover {
+    background: #3a56d4;
+}
+
+.chatbot-response {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    color: #000;
+}
+.chatbot-overlay {
+    display: none;
+}
+
+.chatbot-overlay.active {
+    display: block;
 }
