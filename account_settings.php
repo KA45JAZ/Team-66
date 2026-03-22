@@ -4,7 +4,7 @@
     include 'connectdb.php';
 
     if(!isset($_SESSION['user_id'])){
-        die("<div class=error-page'>You must be logged in to view Account Settings.</div>");
+        die("<div class='error-page'>You must be logged in to view Account Settings.</div>");
     }
 
     $user_id = $_SESSION['user_id'];
@@ -40,7 +40,7 @@
     <div class="account-section">
         <h2>Security</h2>
         <p>You can change your Password
-        <a href="password_change.php" class="account.btn">here</a></p>
+        <a href="password_change.php" class="account-btn">here</a></p>
     </div>
 
     <div class="account-section">

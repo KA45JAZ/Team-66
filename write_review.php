@@ -101,7 +101,6 @@
                     s.textContent = '☆';
                 }
             });
-            ratingMessage.textContent = "You Selected" + ratingValue + " star(s).";
         });
     });
 </script>

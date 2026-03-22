@@ -1920,3 +1920,43 @@ remove+checkout
         font-size: 1.8rem;
     }
 }
+/* ------------------------END OF ACCOUNT PAGE SECTION ----------------------------- */
+/* ------------------------ REVIEW PAGE SECTION --------------------------------- */
+.review-page {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #e2e2e2;
+    color: #000000;
+    border-radius: 12px;
+}
+
+.review-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.review-form textarea {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
+    background: #dddddd;
+    color: #fff;
+    border: 1px solid #3721ff;
+}
+
+.star-rating {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.error-message {
+    color: #ff4c4c;
+    margin-bottom: 15px;
+}
+
+.success-message {
+    color: #4a6cf7;
+    margin-bottom: 15px;
+}
