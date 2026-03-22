@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2026 at 10:23 AM
+-- Generation Time: Mar 21, 2026 at 10:06 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -112,7 +112,7 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`order_id`, `user_id`, `order_date`, `total_amount`, `status`, `full_name`, `address1`, `address2`, `city`, `postcode`, `phone`) VALUES
 (1, 1, '2026-03-14 20:30:56', 22.00, 'pending', 'Jaspinder Shergill', '3 Lavender Close', '', 'Walsall', 'WS5 4ST', '07368209033'),
 (2, 1, '2026-03-14 20:49:50', 12.00, 'pending', 'Jaspinder Shergill', '3 Lavender Close', '', 'Walsall', 'WS5 4ST', '07368209033'),
-(3, 1, '2026-03-17 14:45:58', 17.00, 'pending', 'Jaspinder Shergill', '3 Lavender Close', '', 'Walsall', 'WS5 4ST', '07368209033');
+(3, 1, '2026-03-17 14:45:58', 17.00, 'delivered', 'Jaspinder Shergill', '3 Lavender Close', '', 'Walsall', 'WS5 4ST', '07368209033');
 
 -- --------------------------------------------------------
 
@@ -190,7 +190,6 @@ INSERT INTO `products` (`product_id`, `category_id`, `name`, `description`, `pri
 (28, 1, 'Under Armour Logo T-Shirt Mens', 'Everyone makes graphic Ts...but Under Armour makes them better. The fabric we use is light, soft, and quick-drying.', 19.99, 1, 'products/mens/underarmour_blue_t_front.png', '2026-03-14 18:46:08', '2026-03-14 20:02:01'),
 (29, 1, 'The North Face 24/7 Short Sleeve T-Shirt Mens', 'Wherever you like to train and however you like to work out, the 100% recycled 24/7 T-Shirt will help keep you dry. Engineered with FlashDry™ technology acting like a second skin, the fabric works to draw moisture to the surface where it rapidly evaporates.', 22.00, 0, 'products/mens/northface_blue_t_front.png', '2026-03-14 18:46:08', '2026-03-14 20:30:56'),
 (30, 1, 'Puma Men\'s Short-Sleeve Performance T-Shirt', 'Puma\'s Short-Sleeve Performance T-Shirt merges athletic design with performance features. Designed for movement, this activewear piece offers breathability with a comfortable fit.', 15.00, 0, 'products/mens/puma_orange_t_front.png', '2026-03-14 18:46:08', '2026-03-14 18:46:08'),
-(31, 2, 'Nike Futura T-Shirt Ladies', 'This Nike Futura T Shirt is crafted with short sleeves and a crew neck for a classic look. It features flat lock seams to prevent chafing and is a lightweight construction.', 12.00, 0, 'products/womens/nike_white_t_front.png', '2026-03-14 18:46:08', '2026-03-14 18:46:08'),
 (32, 2, 'Puma Train Oversized Tee T-Shirt Womens', 'Puma\'s very nice green t-shirt that looks very green and nice.', 14.00, 0, 'products/womens/puma_green_t_front.png', '2026-03-14 18:46:08', '2026-03-14 18:46:08'),
 (33, 2, 'Under Armour Challenger Training T-Shirt Womens', 'The UA Challenger collection has all your go-to soccer gear that\'s built to keep you staying light and feeling fast on the field.', 17.00, 0, 'products/womens/underarmour_pink_t_front.png', '2026-03-14 18:46:08', '2026-03-14 18:46:08'),
 (34, 2, 'Under Armour Women\'s Rival Core Short-Sleeve Oversized T-Shirt', 'Under Armour\'s Women\'s Rival Core Short-Sleeve Oversized T-Shirt fuses athletic function with relaxed proportions.', 14.00, 0, 'products/womens/underarmour_blue_t_front.png', '2026-03-14 18:46:08', '2026-03-14 18:46:08'),
@@ -239,15 +238,17 @@ CREATE TABLE `users` (
   `email` varchar(150) DEFAULT NULL,
   `password_hash` varchar(255) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
-  `role` enum('customer','admin') DEFAULT 'customer'
+  `role` enum('customer','admin') DEFAULT 'customer',
+  `isDeleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password_hash`, `phone`, `role`) VALUES
-(1, 'Jaspinder', 'Shergill', 'jaspinder-shergill@hotmail.com', '$2y$10$JGSo15YiNPsGeWYM7BXxDOaD.ex.qRmk0oVnSglgwFkuXcA9bQhvq', '07368209033', 'customer');
+INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password_hash`, `phone`, `role`, `isDeleted`) VALUES
+(1, 'Jaspinder', 'Shergill', 'jaspinder-shergill@hotmail.com', '$2y$10$JGSo15YiNPsGeWYM7BXxDOaD.ex.qRmk0oVnSglgwFkuXcA9bQhvq', '07368209033', 'customer', 0),
+(2, 'Jaspinder', 'Shergill', '240336662@aston.ac.uk', '$2y$10$SzrFA5iP9h8ui62H1vIjoexQP05iW26pr/WNjc126n71dsS4NbIYW', '07368209033', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -395,7 +396,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `wishlist`

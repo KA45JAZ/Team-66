@@ -3,27 +3,17 @@ require 'navbar.php';
 require 'admin_check.php';
 require 'connectdb.php';
 
-/* -----------------------------
-   1. KEY METRICS
------------------------------- */
-
 // Total orders
 $totalOrders = $db->query("SELECT COUNT(*) FROM orders")->fetchColumn();
-
 // Total revenue
 $totalRevenue = $db->query("SELECT SUM(total_amount) FROM orders")->fetchColumn();
 if (!$totalRevenue) $totalRevenue = 0;
-
 // Total customers
 $totalCustomers = $db->query("SELECT COUNT(*) FROM users")->fetchColumn();
-
 // Total products
 $totalProducts = $db->query("SELECT COUNT(*) FROM products")->fetchColumn();
 
-/* -----------------------------
-   2. RECENT ORDERS
------------------------------- */
-
+/* recent orders */
 $recentOrdersStmt = $db->query("
     SELECT o.order_id, o.total_amount, o.status, o.order_date,
            CONCAT(u.first_name, ' ', u.last_name) AS full_name
@@ -57,11 +47,10 @@ $statusCounts = $db->query("
 ")->fetchAll();
 
 $statusMap = [
-    'Pending' => 0,
-    'Processing' => 0,
-    'Shipped' => 0,
-    'Completed' => 0,
-    'Cancelled' => 0
+    'pending' => 0,
+    'shipped' => 0,
+    'delivered' => 0,
+    'cancelled' => 0
 ];
 
 foreach ($statusCounts as $row) {
@@ -72,39 +61,39 @@ foreach ($statusCounts as $row) {
 <div class="admin-container">
     <h1 class="admin-title">Admin Dashboard</h1>
 
-    <!-- KEY METRICS -->
-    <div class="dashboard-cards">
+<div class="top-section">
+    <!-- LEFT: METRICS -->
+    <div class="dashboard-grid">
         <div class="dash-card">
-            <h2><?= $totalOrders ?></h2>
-            <p>Total Orders</p>
+            <h2>Total Orders: <?= $totalOrders ?></h2>
         </div>
 
         <div class="dash-card">
-            <h2>£<?= number_format($totalRevenue, 2) ?></h2>
-            <p>Total Revenue</p>
+            <h2>Total Revenue: £<?= number_format($totalRevenue, 2) ?></h2>
         </div>
 
         <div class="dash-card">
-            <h2><?= $totalCustomers ?></h2>
-            <p>Total Customers</p>
+            <h2>Total Customers: <?= $totalCustomers ?></h2>
         </div>
 
         <div class="dash-card">
-            <h2><?= $totalProducts ?></h2>
-            <p>Total Products</p>
+            <h2>Total Products: <?= $totalProducts ?></h2>
         </div>
     </div>
 
-    <!-- ORDER STATUS SUMMARY -->
-    <h2>Order Status Overview</h2>
-    <div class="status-grid">
-        <?php foreach ($statusMap as $status => $count): ?>
-            <div class="status-box status-<?= strtolower($status) ?>">
-                <strong><?= $status ?></strong>
-                <span><?= $count ?></span>
-            </div>
-        <?php endforeach; ?>
+    <!-- RIGHT: ORDER STATUS -->
+    <div class="status-section">
+        <h2>Order Status Overview</h2>
+        <div class="status-grid">
+            <?php foreach ($statusMap as $status => $count): ?>
+                <div class="status-box status-<?= strtolower($status) ?>">
+                    <strong><?= $status ?></strong>
+                    <span><?= $count ?></span>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
+</div>
 
     <!-- RECENT ORDERS -->
     <h2>Recent Orders</h2>

@@ -8,9 +8,11 @@ $categories = $stmt->fetchAll();
 ?>
 
 <div class="admin-container">
-    <h1 class="admin-title">Manage Categories</h1>
 
-    <a href="admin_add_category.php" class="admin-btn add-btn">Add Category</a>
+    <div class="admin-header">
+        <h1 class="admin-title">Manage Categories</h1>
+        <a href="admin_add_category.php" class="admin-btn add-btn">Add Category</a>
+    </div>
 
     <table class="admin-table">
         <thead>

@@ -92,5 +92,6 @@ View Product
 <?php endif; ?>
 
 </div>
+<?php include 'chatbot-overlay.php'; ?>
 
 <?php include 'footer.php'; ?>

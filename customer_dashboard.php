@@ -38,7 +38,7 @@ $orders = $order_stmt->fetchAll();
         
         <div class="dashboard-sidebar">
             <a href="customer_dashboard.php">Dashboard</a>
-            <a href="profile.php">Profile</a>
+            <a href="account.php">Profile</a>
             <a href="orders.php">Orders</a>
             <a href="wishlist.php">Wishlist</a>
             <a href="basket.php">Basket</a>

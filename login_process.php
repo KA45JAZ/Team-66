@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
-    // Fetch user by email
-    $stmt = $db->prepare("SELECT * FROM users WHERE email = :email LIMIT 1");
+    // Fetch user by email which is not deleted
+    $stmt = $db->prepare("SELECT * FROM users WHERE email = :email AND isDeleted = 0 LIMIT 1");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
 
