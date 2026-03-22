@@ -9,21 +9,21 @@ $user_id = $_SESSION['user_id'];
 
 $message = "";
 
-/* ------------------ FETCH CURRENT USER DATA ------------------ */
+
 $stmt = $db->prepare("SELECT first_name, last_name, email, phone FROM users WHERE user_id = :id");
 $stmt->execute(['id' => $user_id]);
 $user = $stmt->fetch();
 
-/* ------------------ UPDATE PROFILE ------------------ */
+
 if (isset($_POST['update'])) {
 
-    // Get form values
+    
     $first = $_POST['first_name'];
     $last = $_POST['last_name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
 
-    // Update database
+  
     $update_stmt = $db->prepare("
         UPDATE users 
         SET first_name = :first, last_name = :last, email = :email, phone = :phone
@@ -40,7 +40,7 @@ if (isset($_POST['update'])) {
 
     $message = "Profile updated successfully";
 
-    // Refresh data after update
+   
     $stmt->execute(['id' => $user_id]);
     $user = $stmt->fetch();
 }
@@ -89,12 +89,12 @@ if (isset($_POST['delete'])) {
 
                 <h2>Update Your Details</h2>
 
-                <!-- Success message -->
+                
                 <?php if ($message): ?>
                     <p class="success-msg"><?= $message ?></p>
                 <?php endif; ?>
 
-                <!-- Update form -->
+                
                 <form method="POST">
 
                     <label>First Name</label>
