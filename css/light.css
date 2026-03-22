@@ -833,6 +833,42 @@ body {
     border: 2px solid #3b5cff;
     border-radius: 10px;
 }
+/* Filter Form Styling */
+.search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+    justify-content: center; /* center on page */
+}
+
+.search-filters input[type="number"] {
+    width: 120px;
+    padding: 8px 10px;
+    border: 2px solid #3b5cff;
+    border-radius: 6px;
+    background: #fafafa;
+    color: rgb(0, 0, 0);
+    outline: none;
+}
+
+.search-filters input[type="number"]::placeholder {
+    color: #747474;
+}
+
+.search-filters button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #3b5cff;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.search-filters button:hover {
+    background: #1a3ad8;
+}
 /* ------------------------- END OF CATEGORY SECTION ------------------------- */
 /* -------------------------- PRODUCT PAGE SECTION -------------------------- */
 .product-page {
