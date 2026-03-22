@@ -29,6 +29,10 @@ $featured = $prod_stmt->fetchAll();
                 <h3><?= $p['name'] ?></h3>
                 <p class="price">£<?= number_format($p['price'], 2) ?></p>
                 <a href="product.php?id=<?= $p['product_id'] ?>" class="product-btn">View</a>
+
+                <a href="add_to_wishlist.php?id=<?= $p['product_id'] ?>" class="product-btn">
+                    Add to Wishlist
+                </a>
             </div>
         <?php endforeach; ?>
     </div>
