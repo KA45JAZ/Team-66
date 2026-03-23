@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<?php include 'head.php'; ?>
 <?php include 'navbar.php'; ?>
 
 <div class="about-container">

@@ -6,7 +6,10 @@ require 'connectdb.php';
 $stmt = $db->query("SELECT * FROM categories ORDER BY category_id");
 $categories = $stmt->fetchAll();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="admin-container">
 
     <div class="admin-header">

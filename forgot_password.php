@@ -51,7 +51,10 @@
         }
     }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="login-container">
     <h2>Forgotten Password</h2>
 

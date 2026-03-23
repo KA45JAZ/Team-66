@@ -42,7 +42,10 @@ $prod_stmt = $db->prepare($sql);
 $prod_stmt->execute($params);
 $products = $prod_stmt->fetchAll();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="products-container">
 
 <h1 class="products-title"><?= htmlspecialchars($category['category_name']) ?></h1>

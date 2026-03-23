@@ -60,7 +60,10 @@ if (isset($_POST['delete'])) {
     exit();
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="dashboard-container">
 
     <!-- Header -->

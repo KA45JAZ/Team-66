@@ -10,7 +10,10 @@ $categories = $cat_stmt->fetchAll();
 $prod_stmt = $db->query("SELECT * FROM products LIMIT 6");
 $featured = $prod_stmt->fetchAll();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="home-hero">
     <h1>YOUR WISHLIST IS EMPTY</h1>
     <p>Tap the "Add to Wishlist" button next to anything you like the look of and we'll save it here. Then when you're ready, add it to your bag, check out, put it on, and then let's go</p>

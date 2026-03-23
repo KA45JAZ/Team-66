@@ -54,7 +54,10 @@
         }
     }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="review-page">
     <h1>Writing a review for: <?= htmlspecialchars($product['name']) ?></h1>
 

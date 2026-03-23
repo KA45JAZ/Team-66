@@ -64,7 +64,10 @@
         }
     }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="account-page">
     <h1>Update Personal Information<h1>
 

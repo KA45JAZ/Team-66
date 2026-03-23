@@ -12,7 +12,10 @@ $stmt = $db->query("
 ");
 $orders = $stmt->fetchAll();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="admin-container">
     <h1 class="admin-title">All Orders</h1>
 

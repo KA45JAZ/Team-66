@@ -24,7 +24,10 @@ $order_stmt = $db->prepare("
 $order_stmt->execute(['id' => $user_id]);
 $orders = $order_stmt->fetchAll();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="dashboard-container">
 
     

@@ -1,5 +1,8 @@
 <?php include 'navbar.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div style="padding: 50px 20px; max-width: 900px; margin: auto;">
 
     <h1 style="text-align:center; color:#4a6cf7;">Frequently Asked Questions</h1>

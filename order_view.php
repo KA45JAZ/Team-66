@@ -42,7 +42,10 @@ $item_stmt = $db->prepare("
 $item_stmt->execute(['oid' => $order_id]);
 $items = $item_stmt->fetchAll();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="order-view-container">
 
     <h1 class="order-view-title">Order #<?= $order_id ?></h1>

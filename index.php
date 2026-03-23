@@ -10,7 +10,10 @@ $categories = $cat_stmt->fetchAll();
 $prod_stmt = $db->query("SELECT * FROM products LIMIT 6");
 $featured = $prod_stmt->fetchAll();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="home-hero">
     <h1>Train Hard. Look Good. Feel Good.</h1>
     <p>Your journey starts with the right gear.</p>

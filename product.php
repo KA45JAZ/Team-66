@@ -39,7 +39,10 @@ $avg_stmt = $db->prepare("
 $avg_stmt->execute(['pid' => $product_id]);
 $rating_data = $avg_stmt->fetch();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="product-page">
 
     <div class="product-left">

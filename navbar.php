@@ -9,7 +9,6 @@ $is_admin = $is_logged_in && $_SESSION['role'] === 'admin';
 ?>
 
 <header class="site-header">
-  <link id="theme-style" rel="stylesheet" href="css/light.css">
 
   <div class="top-nav">
 
@@ -28,8 +27,8 @@ $is_admin = $is_logged_in && $_SESSION['role'] === 'admin';
 
     <div class="nav-right">
 
-  <a href id="theme-toggle" class="nav-icon theme-btn">
-      <img src="images/moon2.png" class="icon-img" alt="Toggle Theme">
+<a href="#" id="theme-toggle" class="nav-icon theme-btn">      
+  <img src="images/moon2.png" class="icon-img" alt="Toggle Theme">
   </a href>
 
   <a href="wishlist.php" class="nav-icon">

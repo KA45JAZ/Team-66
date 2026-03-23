@@ -42,7 +42,10 @@ $item_stmt = $db->prepare("
 $item_stmt->execute(['oid' => $order_id]);
 $items = $item_stmt->fetchAll();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="success-container">
 
     <h1 class="success-title">Thank You for Your Order!</h1>

@@ -21,7 +21,10 @@ $stmt = $db->prepare("
 $stmt->execute(['uid' => $user_id]);
 $orders = $stmt->fetchAll();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="orders-container">
 
     <h1 class="orders-title">Your Orders</h1>

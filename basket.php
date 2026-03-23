@@ -6,7 +6,10 @@ include 'connectdb.php';
 // Basket exists?
 $basket = isset($_SESSION['basket']) ? $_SESSION['basket'] : [];
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="basket-container">
 
     <h1 class="basket-title">Your Basket</h1>

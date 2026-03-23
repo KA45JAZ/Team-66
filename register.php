@@ -1,6 +1,9 @@
 <?php include 'navbar.php'; ?>
 <?php include 'connectdb.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="register-container">
 
     <h2>Create Your Account</h2>

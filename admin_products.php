@@ -51,7 +51,10 @@ $products = $stmt->fetchAll();
 $catStmt = $db->query("SELECT category_id, category_name FROM categories ORDER BY category_name");
 $categories = $catStmt->fetchAll();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="admin-container">
 
     <h1 class="admin-title">Manage Products</h1>

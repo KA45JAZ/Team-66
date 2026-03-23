@@ -44,7 +44,10 @@ if (empty($products)) {
     exit();
 }   
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="products-container">
 
 <h1 class="products-title">

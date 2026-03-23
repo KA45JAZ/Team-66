@@ -57,7 +57,10 @@ foreach ($statusCounts as $row) {
     $statusMap[$row['status']] = $row['count'];
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="admin-container">
     <h1 class="admin-title">Admin Dashboard</h1>
 

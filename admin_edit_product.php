@@ -99,7 +99,10 @@ if (isset($_POST['update_product'])) {
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="admin-container">
 
     <h1 class="admin-title">Edit Product</h1>

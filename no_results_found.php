@@ -12,7 +12,10 @@ $categories = $cat_stmt->fetchAll();
 $prod_stmt = $db->query("SELECT * FROM products LIMIT 6");
 $featured = $prod_stmt->fetchAll();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="home-hero">
     <h1>NO RESULTS FOUND</h1>
     <p>We are sorry but we can’t find any results for "<?= htmlspecialchars($q) ?>".</p>

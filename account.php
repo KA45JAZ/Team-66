@@ -33,7 +33,10 @@
     $review_stmt->execute(['user_id'=>$user_id]);
     $user_reviews = $review_stmt->fetchALL();
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="account-page">
     <h1>My Account</h1>
 

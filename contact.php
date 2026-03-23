@@ -1,7 +1,10 @@
 <?php
 include 'navbar.php';
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="contact-container">
 
     <h2>Contact Us</h2>

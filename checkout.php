@@ -22,7 +22,10 @@ foreach ($basket as $item) {
     $total += $item['price'] * $item['quantity'];
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php include 'head.php'; ?>
 <div class="checkout-container">
 
     <h1 class="checkout-title">Checkout</h1>
