@@ -81,8 +81,25 @@ $rating_data = $avg_stmt->fetch();
             <a href="add_to_basket.php?id=<?= $product['product_id'] ?>" class="product-btn add-basket">Add to Basket</a>
         <?php endif; ?>
 
-        <a href="add_to_wishlist.php?id=<?= $product['product_id'] ?>" class="product-btn add-wishlist">Add to Wishlist</a>
+        <a href="add_to_wishlist.php?id=<?= $product['product_id'] ?>" class="product-btn">Add to Wishlist</a>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         <a href="write_review.php?product_id=<?= $product['product_id'] ?>" class="product-btn">Write a Review</a>
 
     </div>
